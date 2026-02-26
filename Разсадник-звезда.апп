@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Разсадник Звезда | Разсади ягоди, малини, боровинки</title>
+  <meta name="description" content="Продажба на разсади ягоди, малини, къпини и боровинки. Разсадник Звезда – директно от производител.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: url('hero.jpg') center/cover no-repeat;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    header .content {
+      position: relative;
+      max-width: 800px;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.3em;
+      margin-bottom: 25px;
+    }
+    .btn {
+      background: #25d366;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 1.1em;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .product {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .product .info {
+      padding: 15px;
+    }
+    .price {
+      font-weight: bold;
+      color: #2e7d32;
+      margin-top: 10px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Viber & WhatsApp */
+    .chat-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
+    }
+    .chat-buttons a {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 26px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-decoration: none;
+    }
+    .viber { background: #7360f2; }
+    .whatsapp { background: #25d366; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="content">
+    <h1>Разсадник Звезда</h1>
+    <p>Качествени разсади ягоди, малини, къпини и боровинки<br>директно от производител</p>
+    <a class="btn" href="https://wa.me/359877779963">Поръчай по Viber / WhatsApp</a>
+  </div>
+</header>
+
+<section>
+  <div class="features">
+    <div>🚚 Доставка в цяла България</div>
+    <div>🌱 Реални разсади от производител</div>
+    <div>💬 Бърза поръчка по телефон</div>
+  </div>
+</section>
+
+<section>
+  <h2>Нашите разсади</h2>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="images/yagodi-gol-koren.jpg" alt="Разсад ягоди на гол корен">
+      <div class="info">
+        <h3>Ягоди – гол корен</h3>
+        <p>Здрав разсад с отлично развита коренова система. Подходящ за масово засаждане.</p>
+        <div class="price">0.25 € / брой</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="images/yagodi-tably.jpg" alt="Разсад ягоди в табли">
+      <div class="info">
+        <h3>Ягоди – вкоренени в табли (70 бр)</h3>
+        <p>Сортове Дарселект и Азия. Отлично прихващане и равномерен растеж.</p>
+        <div class="price">21 € / табли</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="info">
+        <h3>Целогодишни малини Херитидж</h3>
+        <p>Ремонтантен сорт с продължително плододаване.</p>
+        <div class="price">0.50 € / брой</div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="info">
+        <h3>Американски боровинки</h3>
+        <p>
+          Едногодишни – 2.50 €<br>
+          Двугодишни (1.5 л) – 6 €<br>
+          Тригодишни (14 л) – 15 €<br>
+          Сортове: Маверик, Ню Хановер, Дюк, Патриот
+        </p>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="info">
+        <h3>Къпини Тройна корона</h3>
+        <p>В изчакване – очаквайте скоро.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© Разсадник Звезда | Телефон: +359 877 779 963</p>
+</footer>
+
+<div class="chat-buttons">
+  <a class="viber" href="viber://chat?number=+359877779963">V</a>
+  <a class="whatsapp" href="https://wa.me/359877779963">W</a>
+</div>
