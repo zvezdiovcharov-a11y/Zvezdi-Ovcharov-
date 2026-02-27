@@ -1,213 +1,204 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-  <meta charset="UTF-8">
-  <title>Разсадник Звезда | Разсади ягоди, малини, боровинки</title>
-  <meta name="description" content="Продажба на разсади ягоди, малини, къпини и боровинки. Разсадник Звезда – директно от производител.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Разсадник Звезда</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: url('hero.jpg') center/cover no-repeat;
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-    }
-    header .content {
-      position: relative;
-      max-width: 800px;
-      padding: 20px;
-    }
-    header h1 {
-      font-size: 2.8em;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.3em;
-      margin-bottom: 25px;
-    }
-    .btn {
-      background: #25d366;
-      color: white;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-size: 1.1em;
-      border-radius: 6px;
-      display: inline-block;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .product {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .product img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-    .product .info {
-      padding: 15px;
-    }
-    .price {
-      font-weight: bold;
-      color: #2e7d32;
-      margin-top: 10px;
-    }
+body{
+  line-height:1.5;
+  background:#fafafa;
+}
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      text-align: center;
-    }
+header{
+  background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+             url('header.jpg') center/cover no-repeat;
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
 
-    footer {
-      background: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-    }
+header h1{
+  font-size:32px;
+  margin-bottom:15px;
+}
 
-    /* Viber & WhatsApp */
-    .chat-buttons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 9999;
-    }
-    .chat-buttons a {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      text-decoration: none;
-    }
-    .viber { background: #7360f2; }
-    .whatsapp { background: #25d366; }
-  </style>
+header p{
+  margin-bottom:20px;
+}
+
+section{
+  padding:40px 15px;
+  text-align:center;
+}
+
+h2{
+  margin-bottom:30px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.product{
+  background:white;
+  border:1px solid #ddd;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.product img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.info{
+  padding:15px;
+}
+
+.price{
+  margin-top:10px;
+  font-weight:bold;
+  color:#e60023;
+}
+
+footer{
+  background:#222;
+  color:#ccc;
+  text-align:center;
+  padding:25px 15px;
+}
+
+.whatsapp-bottom{
+  margin-top:15px;
+  display:inline-block;
+  background:#25d366;
+  color:white;
+  padding:12px 25px;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+}
+</style>
 </head>
+
 <body>
+
 <header>
-  <div class="content">
-    <h1>Разсадник Звезда</h1>
-    <p>Качествени разсади ягоди, малини, къпини и боровинки<br>директно от производител </p>
-    <a class="btn" href="https://wa.me/359877779963">Поръчай по Viber / WhatsApp</a>
-  </div>
+  <h1>Разсадник Звезда</h1>
+  <p>Качествени разсади ягоди, малини, къпини и боровинки директно от производител</p>
 </header>
 
 <section>
   <div class="features">
     <div>🚚 Доставка в цяла България</div>
     <div>🌱 Реални разсади от производител</div>
-    <p style="font-size:18px;">
-  📞 <strong>Бърза поръчка по телефон:</strong>
-  <a href="tel:0877779963" style="color:red; text-decoration:none;"</a>
-    0877779963
     <div>
+      📞 <strong>Бърза поръчка:</strong><br>
+      <a href="tel:0877779963" style="color:red; text-decoration:none;">
+        0877779963
+      </a>
     </div>
-  <h2>Нашите разсади</h2>
-</a>
-</p>
-  </a>
-</div>
-  </a>
-</p>
   </div>
 </section>
 
-<section
-  <div class="products">
+<section>
+<h2>Нашите разсади</h2>
 
-    <div class="product">
-      <img src="yagodi-gol-koren.jpg" alt="Разсад ягоди на гол корен">
-      <div class="info">
-        <h3>Ягоди – гол корен</h3>
-        <p>Здрав разсад с отлично развита коренова система. Подходящ за масово засаждане.</p>
-        <div class="price">0.25 € / брой</div>
-    <div class="product">
-      <img src="qgodi-tably.jpg" alt="Разсад ягоди в табли">
-      <div class="info">
-        <h3>Ягоди – вкоренени в табли (70 бр)</h3>
-        <p>Сортове Дарселект и Азия. Отлично прихващане и равномерен растеж.</p>
-        <div class="price">21 € / табли</div>
-    <div class="product">
-      <div class="info">
-        <h3>Целогодишни малини Херитидж</h3>
-        <p>Ремонтантен сорт с продължително плододаване.</p>
-        <div class="price">0.50 € / брой</div>
-      </div>
-    </div>
+<div class="products">
 
-    <div class="product">
-      <div class="info">
-        <h3>Американски боровинки</h3>
-        <p>
-          Едногодишни – 2.50 €<br>
-          Двугодишни (1.5 л) – 6 €<br>
-          Тригодишни (14 л) – 15 €<br>
-          Сортове: Маверик, Ню Хановер, Дюк, Патриот
-        </p>
-      </div>
-    </div>
+<!-- Ягоди гол корен -->
+<div class="product">
+<img src="yagodi-gol-koren.jpg" alt="Разсад ягоди на гол корен">
+<div class="info">
+<h3>Ягоди – гол корен</h3>
+<p>Здрав разсад с отлично развита коренова система. Подходящ за масово засаждане.</p>
+<p>Сортове Дарселект и Азия. Отлично прихващане и равномерен растеж.</p>
+<div class="price">0.25 € / брой</div>
+</div>
+</div>
 
-    <div class="product">
-      <div class="info">
-        <h3>Къпини Тройна корона</h3>
-        <p>В изчакване – очаквайте скоро.</p>
-      </div>
-    </div>
+<!-- Ягоди табли -->
+<div class="product">
+<img src="qgodi-tably.jpg" alt="Разсад ягоди в табли">
+<div class="info">
+<h3>Ягоди – вкоренени в табли (70 бр)</h3>
+<p>Перфектно качество, чудесен благ вкус, превъзходен аромат и висок добив.</p>
+<p>Ще плододават още през тази пролет.</p>
+<div class="price">21 € / табли</div>
+</div>
+</div>
 
-  </div>
+<!-- Малини -->
+<div class="product">
+<img src="malini-konteiner.jpg" alt="Целогодишни малини в контейнер">
+<div class="info">
+<h3>Целогодишни малини – вкоренени в контейнер</h3>
+<p>Здрави растения с отлично прихващане.</p>
+<p>Очакват се през юни.</p>
+</div>
+</div>
+
+<!-- Боровинка 1 -->
+<div class="product">
+<img src="borovinka-1god.jpg" alt="Едногодишна боровинка">
+<div class="info">
+<h3>Американска боровинка – едногодишна</h3>
+<div class="price">2.50 €</div>
+</div>
+</div>
+
+<!-- Боровинка 2 -->
+<div class="product">
+<img src="borovinka-2god.jpg" alt="Двугодишна боровинка">
+<div class="info">
+<h3>Американска боровинка – двугодишна (1.5 л)</h3>
+<div class="price">6 €</div>
+</div>
+</div>
+
+<!-- Боровинка 3 -->
+<div class="product">
+<img src="borovinka-3god.jpg" alt="Тригодишна боровинка">
+<div class="info">
+<h3>Американска боровинка – тригодишна (14 л)</h3>
+<div class="price">15 €</div>
+</div>
+</div>
+
+</div>
 </section>
 
 <footer>
-  <p  📞 <strong>Бърза поръчка по телефон:</strong>
-  <a href="tel:0877779963" style="color:red; text-decoration:none;">
-    0877779963
-  </a>
-</p>
+📞 Бърза поръчка:
+<a href="tel:0877779963" style="color:#ff4d4d; text-decoration:none;">
+0877779963
+</a>
+
+<br><br>
+
+<a class="whatsapp-bottom" href="https://wa.me/359877779963">
+Поръчай по WhatsApp
+</a>
+
 </footer>
 
-<div class="chat-buttons">
-  <a class="viber" href="viber://chat?number=+359877779963">V</a>
-  <a class="whatsapp" href="https://wa.me/359877779963">W</a>
-</div>
+</body>
+</html>
