@@ -70,14 +70,17 @@ h2{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:15px;
+ 
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr); /* 2 на ред */
+  gap:15px;
 }
 
-.products:hover{
-transform:scale(1.03);
+.product:hover{
+  transform:scale(1.03);
   transition:0.2s;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:2px;
 }
 
 .product{
