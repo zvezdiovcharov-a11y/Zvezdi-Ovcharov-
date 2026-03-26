@@ -2,19 +2,90 @@
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Разсад къпини без бодли | Разсадник Звезда</title>
 
 <meta name="description" content="Къпини без бодли сорт Тройна корона. Качествен разсад директно от производител.">
-
 <meta name="keywords" content="разсад къпини, тройна корона, къпини без бодли">
-
 <meta name="robots" content="index, follow">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  line-height:1.6;
+  background:#fafafa;
+  padding:15px;
+  text-align:center;
+}
+
+/* по-голям текст */
+h1{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+p{
+  font-size:18px;
+  margin-bottom:15px;
+}
+
+/* галерия 2 на ред */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.03);
+}
+
+/* full screen */
+#fullscreen{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+
+#fullscreen img{
+  max-width:90%;
+  max-height:90%;
+}
+
+/* бутон */
+a{
+  display:inline-block;
+  margin-top:15px;
+  font-size:18px;
+}
+</style>
+
 </head>
 
 <body>
 
 <h1>Разсад къпини без бодли</h1>
-<img src="kupini Triple crown1.jpg"alt="Къпини Тройна корона Triple crown без бодли">>
+
+<div class="gallery">
+  <img src="kupini Triple crown1.jpg" alt="Къпини Тройна корона">
+  <img src="kupini Triple crown2.jpg" alt="Къпини Тройна корона">
+</div>
+
 <p>
 Къпини без бодли сорт Тройна корона.
 Вкоренени растения с отлично прихващане.
@@ -27,6 +98,20 @@
 </p>
 
 <a href="index.html">⬅ Обратно към началната страница</a>
+
+<!-- fullscreen -->
+<div id="fullscreen" onclick="this.style.display='none'">
+  <img id="fullimg">
+</div>
+
+<script>
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.onclick = function() {
+    document.getElementById('fullscreen').style.display = 'flex';
+    document.getElementById('fullimg').src = this.src;
+  }
+});
+</script>
 
 </body>
 </html>
