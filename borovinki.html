@@ -2,48 +2,188 @@
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Разсад американска боровинка | Разсадник Звезда</title>
 
 <meta name="description" content="Едногодишни, двугодишни и тригодишни американски боровинки. Директно от производител.">
-
 <meta name="keywords" content="разсад боровинки, американска боровинка">
-
 <meta name="robots" content="index, follow">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  line-height:1.6;
+  background:#fafafa;
+  padding:15px;
+  text-align:center;
+}
+
+.container{
+  max-width:800px;
+  margin:auto;
+}
+
+h1{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+h2{
+  font-size:22px;
+  margin:25px 0 10px;
+}
+
+p{
+  font-size:18px;
+  margin-bottom:15px;
+}
+
+/* галерия */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.03);
+}
+
+/* цена */
+.price{
+  font-size:20px;
+  font-weight:bold;
+  color:#e60023;
+  margin-bottom:15px;
+}
+
+/* бутон */
+.button{
+  display:inline-block;
+  margin-top:20px;
+  background:#25d366;
+  color:white;
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* обратно */
+.back{
+  display:block;
+  margin-top:20px;
+  font-size:18px;
+}
+
+/* fullscreen */
+#fullscreen{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+
+#fullscreen img{
+  max-width:90%;
+  max-height:90%;
+}
+
+/* мобилно */
+@media (max-width:600px){
+  .gallery{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
 </head>
 
 <body>
 
+<div class="container">
+
 <h1>Разсад американска боровинка</h1>
-<img src="borovinka.jpg" alt="Американска боровинка">
-<img src="borovinka1.jpeg">
+
+<!-- ОБЩИ СНИМКИ -->
+<div class="gallery">
+  <img src="borovinka.jpg" alt="Американска боровинка">
+  <img src="borovinka1.jpeg" alt="Боровинки плод">
+</div>
 
 <h2>Едногодишни</h2>
-<img src="borovinka-1god.jpg">
-<p><b>Цена: 2.50 €</b></p>
+<div class="gallery">
+  <img src="borovinka-1god.jpg">
+  <img src="borovinka-1god.jpg">
+</div>
+<div class="price">Цена: 2.50 €</div>
 
 <h2>Двугодишни (1.5 л)</h2>
-<img src="borovinka-2god.jpg">
-<p><b>Цена: 6 €</b></p>
+<div class="gallery">
+  <img src="borovinka-2god.jpg">
+  <img src="borovinka-2god.jpg">
+</div>
+<div class="price">Цена: 6 €</div>
 
 <h2>Тригодишни (15 л)</h2>
-<img src="borovinka-3god.jpg">
-<p><b>Цена: Изчерпани €</b></p>
-
-<p>Отглеждането на американска боровинка изисква слънчево място, силно кисела почва (4.0–5.5), редовно поливане без преовлажняване и ежегодно подрязване за подмладяване. Нуждаят се от торф, иглолистна кора и специфични торове за киселолюбиви растения. Растенията са студоустойчиви, като за по-добра реколта се засаждат няколко сорта. 
-Ключови изисквания за успех:
-Почва: Задължително кисела (4.0-5.5). Ако почвата не е такава, се изкопава дупка и се запълва с торф, борови кори и пясък.
-Слънце: Пълно слънце (минимум 6 часа дневно).
-Вода: Постоянна влага. Корените са плитки, затова е критично да не засъхват, но и да не стоят във вода.
-Засаждане на около 1м от храстити и 1.5-2м междуредие. Подрязване на ранна пролет. Премахват се старите (над 4-5 годишни) и изсъхнали клони за стимулиране на нов растеж. 
-Мулчирайте около храста с дървесни кори, за да запазите влагата и киселинността на почвата. 
-
-
+<div class="gallery">
+  <img src="borovinka-3god.jpg">
+  <img src="borovinka-3god.jpg">
+</div>
+<div class="price">Изчерпани</div>
 
 <p>
-📞 Поръчки: <a href="tel:0877779963">0877779963</a>
+Отглеждането на американска боровинка изисква слънчево място, силно кисела почва (pH 4.0–5.5), редовно поливане и добра грижа.
 </p>
 
-<a href="index.html">⬅ Обратно към началната страница</a>
+<p>
+📌 Основни изисквания:
+<br>• Почва: кисела (торф + борови кори)
+<br>• Слънце: минимум 6 часа
+<br>• Поливане: редовно, без задържане на вода
+<br>• Подрязване: ранна пролет
+<br>• Разстояние: ~1м между растенията
+</p>
+
+<a class="button" href="https://wa.me/359877779963">
+Поръчай по WhatsApp
+</a>
+
+<p>
+📞 Телефон: <a href="tel:0877779963">0877779963</a>
+</p>
+
+<a class="back" href="index.html">⬅ Обратно към началната страница</a>
+
+</div>
+
+<!-- fullscreen -->
+<div id="fullscreen" onclick="this.style.display='none'">
+  <img id="fullimg">
+</div>
+
+<script>
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.onclick = function() {
+    document.getElementById('fullscreen').style.display = 'flex';
+    document.getElementById('fullimg').src = this.src;
+  }
+});
+</script>
 
 </body>
 </html>
