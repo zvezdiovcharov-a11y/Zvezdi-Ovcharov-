@@ -2,19 +2,127 @@
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Разсад целогодишни малини Полка | Разсадник Звезда</title>
 
 <meta name="description" content="Разсад целогодишни малини Полка вкоренени в контейнер. Директно от производител.">
-
-<meta name="keywords" content="разсад целогосишни малини, малини разсад">
-
+<meta name="keywords" content="разсад целогодишни малини, малини разсад, малини Полка">
 <meta name="robots" content="index, follow">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  line-height:1.6;
+  background:#fafafa;
+  padding:15px;
+  text-align:center;
+}
+
+.container{
+  max-width:800px;
+  margin:auto;
+}
+
+/* заглавие*/
+h1{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+/* текст */
+p{
+  font-size:18px;
+  margin-bottom:15px;
+}
+
+/* галерия */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.03);
+}
+
+/* цена */
+.price{
+  font-size:20px;
+  font-weight:bold;
+  color:#e60023;
+  margin-top:10px;
+}
+
+/* бутон */
+.button{
+  display:inline-block;
+  margin-top:20px;
+  background:#25d366;
+  color:white;
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* обратно */
+.back{
+  display:block;
+  margin-top:20px;
+  font-size:18px;
+}
+
+/* fullscreen */
+#fullscreen{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+
+#fullscreen img{
+  max-width:90%;
+  max-height:90%;
+}
+
+/* мобилно */
+@media (max-width:600px){
+  .gallery{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
 </head>
 
 <body>
 
-<h1>Целогодишни малини Полка вкоренени в контейнер</h1>
-<img src="malini polka.jpg"alt="Разсад целогодишни малини Полка цена">
+<div class="container">
+
+<h1>>Целогодишни малини Полка вкоренени в контейнер</h1>
+
+<div class="gallery">
+  <img src="malini polka.jpg"alt="Разсад целогодишни малини Полка цена">
+  <img src="snimka2.jpg">
+  <img src="snimka3.jpg">
+  <img src="snimka4.jpg">
+</div>
+
 <p>
  Малини „Полка" (Polka) са популярен ремонтантен сорт с едри (10-13 г), ароматни и вкусни червени плодове, подходящи за прясна консумация и промишлено производство. Плододават от средата на юли до есента (до -3°C), давайки висок добив до 4 кг от храст, без да се разпадат. Сортът е устойчив, с мощни, изправени стъбла, които често не изискват конструкция. 
 Плододава както на едногодишни, така и на двегодишни пръчки.
@@ -24,12 +132,36 @@
 Разстояние: Препоръчва се 0,3–0,5 м между растенията в реда и 1,5–1,8 м между редовете
 Рязане: За максимален есенен добив, през пролетта цялата надземна част може да бъде отрязана до земята. 
 </p>
+
 <div class="price">Очакват се през юни</div>
+
+<p><b>0.500л. и 2л. контейнери</b></p>
+
+<a class="button" href="https://wa.me/359877779963">
+Поръчай по WhatsApp
+</a>
+
 <p>
-📞 Поръчки: <a href="tel:0877779963">0877779963</a>
+📞 Телефон: <a href="tel:0877779963">0877779963</a>
 </p>
 
-<a href="index.html">⬅ Обратно към началната страница</a>
+<a class="back" href="index.html">⬅ Обратно към началната страница</a>
+
+</div>
+
+<!-- fullscreen -->
+<div id="fullscreen" onclick="this.style.display='none'">
+  <img id="fullimg">
+</div>
+
+<script>
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.onclick = function() {
+    document.getElementById('fullscreen').style.display = 'flex';
+    document.getElementById('fullimg').src = this.src;
+  }
+});
+</script>
 
 </body>
 </html>
