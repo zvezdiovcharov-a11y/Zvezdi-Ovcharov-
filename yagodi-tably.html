@@ -9,6 +9,7 @@
 <meta name="keywords" content="разсад ягоди, дарселект, азия, ягоди разсад производител">
 
 <meta name="robots" content="index, follow">
+
 <style>
 body{
   font-family: Arial, sans-serif;
@@ -18,18 +19,24 @@ body{
   text-align:center;
 }
 
-/* по-голям текст */
+.container{
+  max-width:800px;
+  margin:auto;
+}
+
+/* заглавие */
 h1{
   font-size:28px;
   margin-bottom:20px;
 }
 
+/* текст */
 p{
   font-size:18px;
   margin-bottom:15px;
 }
 
-/* галерия 2 на ред */
+/* галерия */
 .gallery{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -48,7 +55,34 @@ p{
   transform:scale(1.03);
 }
 
-/* full screen */
+/* цена */
+.price{
+  font-size:20px;
+  font-weight:bold;
+  color:#e60023;
+  margin-top:10px;
+}
+
+/* бутон */
+.button{
+  display:inline-block;
+  margin-top:20px;
+  background:#25d366;
+  color:white;
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* обратно */
+.back{
+  display:block;
+  margin-top:20px;
+  font-size:18px;
+}
+
+/* fullscreen */
 #fullscreen{
   display:none;
   position:fixed;
@@ -64,16 +98,9 @@ p{
 #fullscreen img{
   max-width:90%;
   max-height:90%;
-}
 
-/* бутон */
-a{
-  display:inline-block;
-  margin-top:15px;
-  font-size:18px;
 }
 </style>
-
 </head>
 
 <body>
