@@ -9,7 +9,6 @@
 <meta name="keywords" content="разсад ягоди, дарселект, азия, ягоди разсад производител">
 
 <meta name="robots" content="index, follow">
-
 <style>
 body{
   font-family: Arial, sans-serif;
@@ -24,13 +23,16 @@ body{
   margin:auto;
 }
 
-/* заглавие */
 h1{
   font-size:28px;
   margin-bottom:20px;
 }
 
-/* текст */
+h2{
+  font-size:22px;
+  margin:25px 0 10px;
+}
+
 p{
   font-size:18px;
   margin-bottom:15px;
@@ -60,7 +62,7 @@ p{
   font-size:20px;
   font-weight:bold;
   color:#e60023;
-  margin-top:10px;
+  margin-bottom:15px;
 }
 
 /* бутон */
@@ -98,8 +100,8 @@ p{
 #fullscreen img{
   max-width:90%;
   max-height:90%;
-
 }
+
 </style>
 </head>
 
@@ -129,6 +131,19 @@ p{
 </p>
 
 <a href="index.html">⬅ Обратно към началната страница</a>
+<!-- fullscreen -->
+<div id="fullscreen" onclick="this.style.display='none'">
+  <img id="fullimg">
+</div>
+
+<script>
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.onclick = function() {
+    document.getElementById('fullscreen').style.display = 'flex';
+    document.getElementById('fullimg').src = this.src;
+  }
+});
+</script>
 
 </body>
 </html>
