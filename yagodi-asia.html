@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Разсад ягоди от производител | Разсадник Звезда</title>
+
+<meta name="description" content="Качествен разсад ягоди сорт Дарселект. Разсад на гол корен. Доставка в цяла България. Тел: 0877779963">
+<meta name="keywords" content="разсад ягоди, ягоди гол корен, ягоди табли, разсад ягоди Дарселект, разсад ягоди Азия">
+<meta name="robots" content="index, follow">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  line-height:1.6;
+  background:#fafafa;
+  padding:15px;
+  text-align:center;
+}
+
+.container{
+  max-width:800px;
+  margin:auto;
+}
+
+/* заглавие */
+h1{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+/* текст */
+p{
+  font-size:18px;
+  margin-bottom:15px;
+}
+
+/* галерия */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.03);
+}
+
+/* цена */
+.price{
+  font-size:20px;
+  font-weight:bold;
+  color:#e60023;
+  margin-top:10px;
+}
+
+/* бутон */
+.button{
+  display:inline-block;
+  margin-top:20px;
+  background:#25d366;
+  color:white;
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* обратно */
+.back{
+  display:block;
+  margin-top:20px;
+  font-size:18px;
+}
+
+/* fullscreen */
+#fullscreen{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+
+#fullscreen img{
+  max-width:90%;
+  max-height:90%;
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Asia - разсад вкоренен в табли70</h1>
+
+<div class="gallery">
+<img src="yagodi-tably.jpg">
+<img src="yagodi-asia.jpg"alt="Разсад ягоди Азия цена вкоренен в табли">
+
+</div>
+
+<p>Азия (Asia) Много едри плодове, с дълга конична форма, средна консистенция, но добра устойчивост на обработка. Яркочервени плодове и червена плът. Благодарение на отличните органолептични характеристики и дългия срок на годност, сортът „Азия" е добре ценен от производителите, които продават директно на обществеността и имат много взискателни клиенти, търсещи качествени продукти. Много големи добиви.</p>
+<div class="price">Вкоренени в табли70бр - 21€</div>
+<p><b>НАЛИЧНИ</b></p>
+
+<a class="button" href="https://wa.me/359877779963">
+Поръчай по WhatsApp
+</a>
+
+<p>
+📞 Телефон: <a href="tel:0877779963">0877779963</a>
+</p>
+
+<a class="back" href="index.html">⬅ Обратно към началната страница</a>
+
+</div>
+
+<!-- fullscreen -->
+<div id="fullscreen" onclick="this.style.display='none'">
+  <img id="fullimg">
+</div>
+
+<script>
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.onclick = function() {
+    document.getElementById('fullscreen').style.display = 'flex';
+    document.getElementById('fullimg').src = this.src;
+  }
+});
+</script>
+
+</body>
+</html>
