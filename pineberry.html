@@ -2,20 +2,118 @@
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>PINEBERRY - ЕКЗОТИЧНАТА БЯЛА ЯГОДА С ВКУС НА АНАНАС</title>
 
 <meta name="description" content="PINEBERRY - ЕКЗОТИЧНАТА БЯЛА ЯГОДА С ВКУС НА АНАНАС">
-
 <meta name="keywords" content="разсад ягоди, бели ягоди, бяла ягода, ананасова ягода, разсад производител">
-
 <meta name="robots" content="index, follow">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  line-height:1.6;
+  background:#fafafa;
+  padding:15px;
+  text-align:center;
+}
+
+.container{
+  max-width:800px;
+  margin:auto;
+}
+
+/* заглавие */
+h1{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+/* текст */
+p{
+  font-size:18px;
+  margin-bottom:15px;
+}
+
+/* галерия */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.03);
+}
+
+/* цена */
+.price{
+  font-size:20px;
+  font-weight:bold;
+  color:#e60023;
+  margin-top:10px;
+}
+
+/* бутон */
+.button{
+  display:inline-block;
+  margin-top:20px;
+  background:#25d366;
+  color:white;
+  padding:12px 20px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:18px;
+}
+
+/* обратно */
+.back{
+  display:block;
+  margin-top:20px;
+  font-size:18px;
+}
+
+/* fullscreen */
+#fullscreen{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
+
+#fullscreen img{
+  max-width:90%;
+  max-height:90%;
+
+}
+</style>
+
 </head>
 
 <body>
-  
+
+<div class="container">
+
 <h1>PINEBERRY - ЕКЗОТИЧНАТА БЯЛА ЯГОДА С ВКУС НА АНАНАС</h1>
-<img src="pineberry.jpg"alt="бяла ягода с вкус на ананас pineberry цена">
-<img src="pineberry1.jpg"alt="бяла ягода с вкус на ананас pineberry цена">
+
+<div class="gallery">
+  <img src="pineberry.jpg"alt="бяла ягода с вкус на ананас pineberry цена">
+</div>
+
 <p>
 🍓 PINEBERRY – ЕКЗОТИЧНАТА БЯЛА ЯГОДА С ВКУС НА АНАНАС 🍍
 Представяме ви един от най-интересните и редки сортове ягоди – Pineberry.
@@ -28,15 +126,38 @@
 🌿 Много интересен и рядък сорт
 📸 Перфектна за впечатляващи снимки и десерти
 Плодовете са нежни, ароматни и различни от обикновените ягоди.
-Освен вкусни, те са и истинска атракция за гости и клиенти.</p>
-
-
-<div class="price">1 € / ограничени количества</div>
-<p>
-📞 Поръчки: <a href="tel:0877779963">0877779963</a>
+Освен вкусни, те са и истинска атракция за гости и клиенти.
 </p>
 
-<a href="index.html">⬅ Обратно към началната страница</a>
+<div class="price">1€</div>
+
+<p><b>НАЛИЧНОСТ / Ограничени</b></p>
+
+<a class="button" href="https://wa.me/359877779963">
+Поръчай по WhatsApp
+</a>
+
+<p>
+📞 Телефон: <a href="tel:0877779963">0877779963</a>
+</p>
+
+<a class="back" href="index.html">⬅ Обратно към началната страница</a>
+
+</div>
+
+<!-- fullscreen -->
+<div id="fullscreen" onclick="this.style.display='none'">
+  <img id="fullimg">
+</div>
+
+<script>
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.onclick = function() {
+    document.getElementById('fullscreen').style.display = 'flex';
+    document.getElementById('fullimg').src = this.src;
+  }
+});
+</script>
 
 </body>
 </html>
