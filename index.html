@@ -34,6 +34,22 @@
   box-sizing:border-box;
   font-family:Arial,sans-serif;
 }
+<script>
+let cart = [];
+
+function addToCart(product) {
+  cart.push(product);
+  updateCart();
+}
+
+function updateCart() {
+  document.getElementById("cart").innerHTML =
+    cart.map(item => `<li>${item}</li>`).join("");
+    
+  document.getElementById("productsField").value =
+    cart.join(", ");
+}
+</script>
 
 body{
   line-height:1.5;
@@ -106,7 +122,29 @@ h2{
   font-weight:bold;
   color:#e60023;
 }
+ 
+<section>
+<h2>🛒 Количка</h2>
 
+<ul id="cart"></ul>
+
+<form action="https://formsubmit.co/zvezdi.ovcharov@gmail.com" method="POST">
+
+<input type="hidden" name="Продукти" id="productsField">
+
+<input type="text" name="Име" placeholder="Вашето име" required><br><br>
+
+<input type="tel" name="Телефон" placeholder="Телефон" required><br><br>
+
+<textarea name="Адрес" placeholder="Адрес за доставка"></textarea><br><br>
+
+<button type="submit">
+Изпрати поръчка
+</button>
+
+</form>
+</section>
+ 
 footer{
   background:#222;
   color:#ccc;
