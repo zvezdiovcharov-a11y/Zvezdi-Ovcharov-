@@ -34,22 +34,6 @@
   box-sizing:border-box;
   font-family:Arial,sans-serif;
 }
-<script>
-let cart = [];
-
-function addToCart(product) {
-  cart.push(product);
-  updateCart();
-}
-
-function updateCart() {
-  document.getElementById("cart").innerHTML =
-    cart.map(item => `<li>${item}</li>`).join("");
-    
-  document.getElementById("productsField").value =
-    cart.join(", ");
-}
-</script>
 
 body{
   line-height:1.5;
@@ -185,7 +169,22 @@ input, textarea{
  
 </style>
 </head>
+ <script>
+let cart = [];
 
+function addToCart(product) {
+  cart.push(product);
+  updateCart();
+}
+
+function updateCart() {
+  document.getElementById("cart").innerHTML =
+    cart.map(item => `<li>${item}</li>`).join("");
+    
+  document.getElementById("productsField").value =
+    cart.join(", ");
+}
+</script>
 <body>
 
 <h1 style="text-align:center; padding:1px;">
