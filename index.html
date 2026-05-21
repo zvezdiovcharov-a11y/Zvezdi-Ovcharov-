@@ -27,6 +27,23 @@
  ]
 }
 </script>
+<script>
+let cart = [];
+
+function addToCart(product) {
+  cart.push(product);
+  updateCart();
+}
+
+function updateCart() {
+  document.getElementById("cart").innerHTML =
+    cart.map(item => `<li>${item}</li>`).join("");
+    
+  document.getElementById("productsField").value =
+    cart.join(", ");
+}
+</script>
+ 
 <style>
 *{
 margin:0;
@@ -158,9 +175,12 @@ font-weight:bold;
 <h3>Полка - целогодишни малини вкоренени в контейнер</h3>
 <p>Здрави растения с отлично прихващане.</p>
 <div class="price">Очакват се през юни, цена2€,3€</div>
-</div>
-</div>
 </a>
+ <button onclick="addToCart('Малини Полка')">
+Добави в количка
+</button>
+</div>
+</div>
 
 <!-- Къпини -->
 <a href="kupini triple crown.html" style="text-decoration:none; color:inherit;">
@@ -331,6 +351,28 @@ font-weight:bold;
 </p>
 
 </section>
+<section>
+<h2>🛒 Количка</h2>
+
+<ul id="cart"></ul>
+
+<form action="https://formsubmit.co/zvezdi.ovcharov@gmail.com" method="POST">
+
+<input type="hidden" name="Продукти" id="productsField">
+
+<input type="text" name="Име" placeholder="Вашето име" required><br><br>
+
+<input type="tel" name="Телефон" placeholder="Телефон" required><br><br>
+
+<textarea name="Адрес" placeholder="Адрес за доставка"></textarea><br><br>
+
+<button type="submit">
+Изпрати поръчка
+</button>
+
+</form>
+</section>
+ 
 <footer>
 📞 Бърза поръчка:
 <a href="tel:0877779963" style="color:#ff4d4d; text-decoration:none;">
