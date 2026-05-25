@@ -27,6 +27,111 @@
  ]
 }
 </script>
+<section>
+<h2>🛒 Количка</h2>
+
+<div id="cartItems"></div>
+
+<h3 id="cartTotal">Общо продукти: 0</h3>
+
+<form action="https://formsubmit.co/zvezdi.ovcharov@gmail.com" method="POST">
+
+<input type="hidden" name="Продукти" id="productsField">
+
+<input type="text" name="Име" placeholder="Вашето име" required>
+<br><br>
+
+<input type="tel" name="Телефон" placeholder="Телефон" required>
+<br><br>
+
+<textarea name="Адрес" placeholder="Адрес за доставка"></textarea>
+<br><br>
+
+<button type="submit">
+Изпрати поръчка
+</button>
+
+</form>
+</section>
+
+<script>
+let cart = {};
+
+function addToCart(product) {
+
+  if(cart[product]) {
+    cart[product]++;
+  } else {
+    cart[product] = 1;
+  }
+
+  updateCart();
+}
+
+function changeQty(product, amount) {
+
+  cart[product] += amount;
+
+  if(cart[product] <= 0) {
+    delete cart[product];
+  }
+
+  updateCart();
+}
+
+function updateCart() {
+
+  let cartHTML = "";
+  let total = 0;
+  let hiddenProducts = [];
+
+  for(let product in cart) {
+
+    total += cart[product];
+
+    cartHTML += `
+      <div style="
+        background:white;
+        border:1px solid #ddd;
+        border-radius:10px;
+        padding:15px;
+        margin-bottom:10px;
+      ">
+
+        <strong>${product}</strong>
+
+        <br><br>
+
+        <button type="button"
+          onclick="changeQty('${product}', -1)">
+          ➖
+        </button>
+
+        <span style="margin:0 15px; font-size:18px;">
+          ${cart[product]}
+        </span>
+
+        <button type="button"
+          onclick="changeQty('${product}', 1)">
+          ➕
+        </button>
+
+      </div>
+    `;
+
+    hiddenProducts.push(product + " x" + cart[product]);
+  }
+
+  document.getElementById("cartItems").innerHTML = cartHTML;
+
+  document.getElementById("cartTotal").innerText =
+    "Общо продукти: " + total;
+
+  document.getElementById("productsField").value =
+    hiddenProducts.join(", ");
+}
+</script>
+ 
 <style>
 *{
 margin:0;
@@ -161,7 +266,11 @@ font-weight:bold;
 </div>
 </div>
 </a>
-
+<button type="button"
+onclick="addToCart('Малини Полка')">
+Добави в количка
+</button>
+ 
 <!-- Къпини -->
 <a href="kupini triple crown.html" style="text-decoration:none; color:inherit;">
 <div class="product">
@@ -344,6 +453,88 @@ font-weight:bold;
 </a>
 
 </footer>
+<script>
 
+let cart = {};
+
+function addToCart(product) {
+
+  if (cart[product]) {
+    cart[product]++;
+  } else {
+    cart[product] = 1;
+  }
+
+  updateCart();
+}
+
+function changeQty(product, amount) {
+
+  cart[product] += amount;
+
+  if (cart[product] <= 0) {
+    delete cart[product];
+  }
+
+  updateCart();
+}
+
+function updateCart() {
+
+  let cartHTML = "";
+  let total = 0;
+  let hiddenProducts = [];
+
+  for (let product in cart) {
+
+    total += cart[product];
+
+    cartHTML += `
+      <div style="
+        background:white;
+        border:1px solid #ddd;
+        border-radius:10px;
+        padding:15px;
+        margin-bottom:10px;
+      ">
+
+        <strong>${product}</strong>
+
+        <br><br>
+
+        <button type="button"
+          onclick="changeQty('${product}', -1)">
+          ➖
+        </button>
+
+        <span style="
+          margin:0 15px;
+          font-size:18px;
+          font-weight:bold;
+        ">
+          ${cart[product]}
+        </span>
+
+        <button type="button"
+          onclick="changeQty('${product}', 1)">
+          ➕
+        </button>
+
+      </div>
+    `;
+
+    hiddenProducts.push(product + " x" + cart[product]);
+  }
+
+  document.getElementById("cartItems").innerHTML = cartHTML;
+
+  document.getElementById("cartTotal").innerText =
+    "Общо продукти: " + total;
+
+  document.getElementById("productsField").value =
+    hiddenProducts.join(", ");
+}
+
+</script>
 </body>
 </html>
