@@ -27,111 +27,6 @@
  ]
 }
 </script>
-<section>
-<h2>🛒 Количка</h2>
-
-<div id="cartItems"></div>
-
-<h3 id="cartTotal">Общо продукти: 0</h3>
-
-<form action="https://formsubmit.co/zvezdi.ovcharov@gmail.com" method="POST">
-
-<input type="hidden" name="Продукти" id="productsField">
-
-<input type="text" name="Име" placeholder="Вашето име" required>
-<br><br>
-
-<input type="tel" name="Телефон" placeholder="Телефон" required>
-<br><br>
-
-<textarea name="Адрес" placeholder="Адрес за доставка"></textarea>
-<br><br>
-
-<button type="submit">
-Изпрати поръчка
-</button>
-
-</form>
-</section>
-
-<script>
-let cart = {};
-
-function addToCart(product) {
-
-  if(cart[product]) {
-    cart[product]++;
-  } else {
-    cart[product] = 1;
-  }
-
-  updateCart();
-}
-
-function changeQty(product, amount) {
-
-  cart[product] += amount;
-
-  if(cart[product] <= 0) {
-    delete cart[product];
-  }
-
-  updateCart();
-}
-
-function updateCart() {
-
-  let cartHTML = "";
-  let total = 0;
-  let hiddenProducts = [];
-
-  for(let product in cart) {
-
-    total += cart[product];
-
-    cartHTML += `
-      <div style="
-        background:white;
-        border:1px solid #ddd;
-        border-radius:10px;
-        padding:15px;
-        margin-bottom:10px;
-      ">
-
-        <strong>${product}</strong>
-
-        <br><br>
-
-        <button type="button"
-          onclick="changeQty('${product}', -1)">
-          ➖
-        </button>
-
-        <span style="margin:0 15px; font-size:18px;">
-          ${cart[product]}
-        </span>
-
-        <button type="button"
-          onclick="changeQty('${product}', 1)">
-          ➕
-        </button>
-
-      </div>
-    `;
-
-    hiddenProducts.push(product + " x" + cart[product]);
-  }
-
-  document.getElementById("cartItems").innerHTML = cartHTML;
-
-  document.getElementById("cartTotal").innerText =
-    "Общо продукти: " + total;
-
-  document.getElementById("productsField").value =
-    hiddenProducts.join(", ");
-}
-</script>
- 
 <style>
 *{
 margin:0;
@@ -229,10 +124,111 @@ border-radius:5px;
 text-decoration:none;
 font-weight:bold;
 }
+.cart-icon{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#2e8b57;
+  color:white;
+  padding:12px 18px;
+  border-radius:50px;
+  cursor:pointer;
+  z-index:9999;
+  font-weight:bold;
+}
+
+.cart-sidebar{
+  position:fixed;
+  top:0;
+  right:-400px;
+  width:350px;
+  height:100%;
+  background:white;
+  box-shadow:-5px 0 20px rgba(0,0,0,0.2);
+  padding:20px;
+  transition:0.3s;
+  overflow-y:auto;
+  z-index:99999;
+}
+
+.cart-sidebar.open{
+  right:0;
+}
+
+.cart-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.cart-item{
+  border-bottom:1px solid #ddd;
+  padding:15px 0;
+}
+
+.cart-controls{
+  margin-top:10px;
+}
+
+.cart-controls button{
+  width:30px;
+  height:30px;
+}
+ 
 </style>
 </head>
 
 <body>
+<div class="cart-icon"
+onclick="document.getElementById('cartSidebar').classList.add('open')">
+
+🛒 <span id="cartCount">0</span>
+
+</div>
+
+<div id="cartSidebar" class="cart-sidebar">
+
+<div class="cart-header">
+
+<h2>Вашата количка</h2>
+
+<button onclick="closeCart()">✕</button>
+
+</div>
+
+<div id="cartContent"></div>
+
+<form action="https://formsubmit.co/zvezdi.ovcharov@gmail.com"
+method="POST">
+
+<input type="hidden"
+name="Продукти"
+id="productsField">
+
+<input type="text"
+name="Име"
+placeholder="Вашето име"
+required>
+
+<input type="tel"
+name="Телефон"
+placeholder="Телефон"
+required>
+
+<textarea
+name="Адрес"
+placeholder="Адрес за доставка">
+</textarea>
+
+<button type="submit">
+Изпрати поръчка
+</button>
+
+</form>
+
+</div>
+ 
 
 <h1 style="text-align:center; padding:1px;">
 Разсад ягоди, малини, къпини и боровинки
@@ -459,20 +455,23 @@ let cart = {};
 
 function addToCart(product) {
 
-  if (cart[product]) {
+  if(cart[product]) {
     cart[product]++;
   } else {
     cart[product] = 1;
   }
 
   updateCart();
+
+  document.getElementById("cartSidebar")
+    .classList.add("open");
 }
 
 function changeQty(product, amount) {
 
   cart[product] += amount;
 
-  if (cart[product] <= 0) {
+  if(cart[product] <= 0) {
     delete cart[product];
   }
 
@@ -481,60 +480,61 @@ function changeQty(product, amount) {
 
 function updateCart() {
 
-  let cartHTML = "";
+  let html = "";
   let total = 0;
   let hiddenProducts = [];
 
-  for (let product in cart) {
+  for(let product in cart) {
 
     total += cart[product];
 
-    cartHTML += `
-      <div style="
-        background:white;
-        border:1px solid #ddd;
-        border-radius:10px;
-        padding:15px;
-        margin-bottom:10px;
-      ">
+    html += `
+      <div class="cart-item">
 
-        <strong>${product}</strong>
+        <div class="cart-title">
+          ${product}
+        </div>
 
-        <br><br>
+        <div class="cart-controls">
 
-        <button type="button"
-          onclick="changeQty('${product}', -1)">
-          ➖
-        </button>
+          <button type="button"
+            onclick="changeQty('${product}', -1)">
+            −
+          </button>
 
-        <span style="
-          margin:0 15px;
-          font-size:18px;
-          font-weight:bold;
-        ">
-          ${cart[product]}
-        </span>
+          <span>${cart[product]}</span>
 
-        <button type="button"
-          onclick="changeQty('${product}', 1)">
-          ➕
-        </button>
+          <button type="button"
+            onclick="changeQty('${product}', 1)">
+            +
+          </button>
+
+        </div>
 
       </div>
     `;
 
-    hiddenProducts.push(product + " x" + cart[product]);
+    hiddenProducts.push(
+      product + " x" + cart[product]
+    );
   }
 
-  document.getElementById("cartItems").innerHTML = cartHTML;
+  document.getElementById("cartContent")
+    .innerHTML = html;
 
-  document.getElementById("cartTotal").innerText =
-    "Общо продукти: " + total;
+  document.getElementById("cartCount")
+    .innerText = total;
 
-  document.getElementById("productsField").value =
-    hiddenProducts.join(", ");
+  document.getElementById("productsField")
+    .value = hiddenProducts.join(", ");
+}
+
+function closeCart() {
+  document.getElementById("cartSidebar")
+    .classList.remove("open");
 }
 
 </script>
+
 </body>
 </html>
