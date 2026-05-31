@@ -280,7 +280,7 @@ placeholder="Адрес за доставка">
 <div class="price">Очакват се през юни, цена2€,3€</div>
 </a>
  <button class="cart-btn" 
-  onclick="addToCart('Малини Полка,3')">
+  onclick="addToCart('Малини Полка')">
 🛒 Добави
 </button>
 </div>
@@ -468,83 +468,92 @@ placeholder="Адрес за доставка">
 
 </footer>
 
-  <script>
-let cart = [];
+<script>
 
-function addToCart(name, price) {
+let cart = {};
 
-  let existing = cart.find(item => item.name === name);
+function addToCart(product) {
 
-  if(existing){
-    existing.quantity++;
+  if(cart[product]) {
+    cart[product]++;
   } else {
-    cart.push({
-      name: name,
-      price: price,
-      quantity: 1
-    });
+    cart[product] = 1;
+  }
+
+  updateCart();
+
+  document.getElementById("cartSidebar")
+    .classList.add("open");
+}
+
+function changeQty(product, amount) {
+
+  cart[product] += amount;
+
+  if(cart[product] <= 0) {
+    delete cart[product];
   }
 
   updateCart();
 }
 
-function changeQuantity(index, change){
+function updateCart() {
 
-  cart[index].quantity += change;
-
-  if(cart[index].quantity <= 0){
-    cart.splice(index, 1);
-  }
-
-  updateCart();
-}
-
-function updateCart(){
-
-  let cartHTML = "";
+  let html = "";
   let total = 0;
+  let hiddenProducts = [];
 
-  cart.forEach((item, index) => {
+  for(let product in cart) {
 
-    let itemTotal = item.price * item.quantity;
-    total += itemTotal;
+    total += cart[product];
 
-    cartHTML += `
-      <li style="margin-bottom:15px; list-style:none; background:white; padding:10px; border-radius:8px;">
-        
-        <b>${item.name}</b><br>
+    html += `
+      <div class="cart-item">
 
-        Цена: ${item.price.toFixed(2)} €<br>
+        <div class="cart-title">
+          ${product}
+        </div>
 
-        Количество:
-        <button type="button" onclick="changeQuantity(${index}, -1)">-</button>
+        <div class="cart-controls">
 
-        ${item.quantity}
+          <button type="button"
+            onclick="changeQty('${product}', -1)">
+            −
+          </button>
 
-        <button type="button" onclick="changeQuantity(${index}, 1)">+</button>
+          <span>${cart[product]}</span>
 
-        <br>
+          <button type="button"
+            onclick="changeQty('${product}', 1)">
+            +
+          </button>
 
-        Общо: ${itemTotal.toFixed(2)} €
+        </div>
 
-      </li>
+      </div>
     `;
-  });
 
-  cartHTML += `
-    <h3 style="margin-top:20px;">
-      Обща сума: ${total.toFixed(2)} €
-    </h3>
-  `;
+    hiddenProducts.push(
+      product + " x" + cart[product]
+    );
+  }
 
-  document.getElementById("cart").innerHTML = cartHTML;
+  document.getElementById("cartContent")
+    .innerHTML = html;
 
-  document.getElementById("productsField").value =
-    cart.map(item =>
-      `${item.name} x${item.quantity}`
-    ).join(", ");
+  document.getElementById("cartCount")
+    .innerText = total;
+
+  document.getElementById("productsField")
+    .value = hiddenProducts.join(", ");
 }
-  </script>
+
+function closeCart() {
+  document.getElementById("cartSidebar")
+    .classList.remove("open");
+}
+
+</script>
 
 </body>
 </html>
