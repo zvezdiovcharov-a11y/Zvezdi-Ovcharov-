@@ -72,58 +72,99 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:15px;
  
-}
 .products{
 display:grid;
-grid-template-columns:repeat(2, minmax(0,1fr));
-gap:15px;
-align-items:stretch;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
 }
 
 .product{
 background:white;
 border:1px solid #ddd;
-border-radius:10px;
+border-radius:12px;
 overflow:hidden;
 display:flex;
 flex-direction:column;
 height:100%;
-transition:0.2s;
 }
 
 .product img{
 width:100%;
-height:180px;
+height:140px;
 object-fit:cover;
 display:block;
 }
 
 .info{
-padding:12px;
+padding:10px;
 flex-grow:1;
+}
+
+h3{
+font-size:15px;
+margin-bottom:8px;
+}
+
+.price{
+margin-top:10px;
+font-weight:bold;
+color:#e60023;
+font-size:14px;
+}
+
+.cart-btn{
+width:90%;
+margin:10px auto 15px;
+display:block;
+background:#2e8b57;
+color:white;
+border:none;
+padding:10px;
+border-radius:8px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.cart-icon{
+position:fixed;
+top:10px;
+right:10px;
+background:#2e8b57;
+color:white;
+padding:10px 14px;
+border-radius:50px;
+cursor:pointer;
+z-index:9999;
+font-weight:bold;
+font-size:18px;
 }
 
 @media (max-width:768px){
 
 .products{
 grid-template-columns:repeat(2,1fr);
-gap:10px;
-}
-
-h3{
-font-size:15px;
+gap:8px;
 }
 
 .product img{
-height:140px;
+height:110px;
+}
+
+h3{
+font-size:13px;
+}
+
+.price{
+font-size:13px;
 }
 
 .cart-btn{
-font-size:16px;
-padding:10px;
-width:90%;
+font-size:13px;
+padding:8px;
 }
 
+}
 
 .price{
 margin-top:15px;
@@ -298,7 +339,6 @@ placeholder="Адрес за доставка, Еконт">
 <a href="malini-konteiner.html" style="text-decoration:none; color:inherit;">
 <img src="snimka5.jpg" alt="Целогодишни малини вкоренени в контейнер">
 <div class="info">
-</div>
 <h3>Полка - целогодишни малини вкоренени в контейнер</h3>
 <p>Здрави растения с отлично прихващане.</p>
 <div class="price">Очакват се след 15ти юни</div>
