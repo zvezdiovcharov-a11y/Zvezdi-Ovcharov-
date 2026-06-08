@@ -71,99 +71,34 @@ margin-bottom:30px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:15px;
- 
+}
+
 .products{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
+grid-template-columns:repeat(2, 1fr); /* 2 на ред */
+gap:15px;
+}
+
+.product:hover{
+transform:scale(1.03);
+transition:0.2s;
 }
 
 .product{
 background:white;
 border:1px solid #ddd;
-border-radius:12px;
+border-radius:8px;
 overflow:hidden;
-display:flex;
-flex-direction:column;
-height:100%;
 }
 
 .product img{
 width:100%;
-height:140px;
-object-fit:cover;
+height:auto;
 display:block;
 }
 
 .info{
-padding:10px;
-flex-grow:1;
-}
-
-h3{
-font-size:15px;
-margin-bottom:8px;
-}
-
-.price{
-margin-top:10px;
-font-weight:bold;
-color:#e60023;
-font-size:14px;
-}
-
-.cart-btn{
-width:90%;
-margin:10px auto 15px;
-display:block;
-background:#2e8b57;
-color:white;
-border:none;
-padding:10px;
-border-radius:8px;
-font-size:15px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.cart-icon{
-position:fixed;
-top:10px;
-right:10px;
-background:#2e8b57;
-color:white;
-padding:10px 14px;
-border-radius:50px;
-cursor:pointer;
-z-index:9999;
-font-weight:bold;
-font-size:18px;
-}
-
-@media (max-width:768px){
-
-.products{
-grid-template-columns:repeat(2,1fr);
-gap:8px;
-}
-
-.product img{
-height:110px;
-}
-
-h3{
-font-size:13px;
-}
-
-.price{
-font-size:13px;
-}
-
-.cart-btn{
-font-size:13px;
-padding:8px;
-}
-
+padding:15px;
 }
 
 .price{
@@ -189,129 +124,10 @@ border-radius:5px;
 text-decoration:none;
 font-weight:bold;
 }
-.cart-icon{
-  position:fixed;
-  top:20px;
-  right:20px;
-  background:#2e8b57;
-  color:white;
-  padding:12px 18px;
-  border-radius:50px;
-  cursor:pointer;
-  z-index:9999;
-  font-weight:bold;
-}
-
-.cart-sidebar{
-  position:fixed;
-  top:0;
-  right:-400px;
-  width:350px;
-  height:100%;
-  background:white;
-  box-shadow:-5px 0 20px rgba(0,0,0,0.2);
-  padding:20px;
-  transition:0.3s;
-  overflow-y:auto;
-  z-index:99999;
-}
-
-.cart-sidebar.open{
-  right:0;
-}
-
-.cart-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:20px;
-}
-
-.cart-item{
-  border-bottom:1px solid #ddd;
-  padding:15px 0;
-}
-
-.cart-controls{
-  margin-top:10px;
-}
-
-.cart-controls button{
-  width:20px;
-  height:20px;
-}
- .cart-btn{
-  width:80%;
-  margin:15px auto;
-  display:block;
-  background:#2e8b57;
-  color:white;
-  border:none;
-  padding:12px;
-  border-radius:8px;
-  font-size:20px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.2s;
-}
-
-.cart-btn:hover{
-  background:#256f46;
-  transform:scale(1.03);
-}
 </style>
 </head>
 
 <body>
-<div class="cart-icon"
-onclick="document.getElementById('cartSidebar').classList.add('open')">
-
-🛒 <span id="cartCount">0</span>
-
-</div>
-
-<div id="cartSidebar" class="cart-sidebar">
-
-<div class="cart-header">
-
-<h2>Вашата количка</h2>
-
-<button onclick="closeCart()">✕</button>
-
-</div>
-
-<div id="cartContent"></div>
-
-<form action="https://formsubmit.co/zvezdi.ovcharov@gmail.com"
-method="POST">
-
-<input type="hidden"
-name="Продукти"
-id="productsField">
-
-<input type="text"
-name="Име"
-placeholder="Вашето име"
-required>
-
-<input type="tel"
-name="Телефон"
-placeholder="Телефон"
-required>
-
-<textarea
-name="Адрес"
-placeholder="Адрес за доставка, Еконт">
-</textarea>
-
-<button type="submit">
-Изпрати поръчка
-</button>
-
-</form>
-
-</div>
- 
 
 <h1 style="text-align:center; padding:1px;">
 Разсад ягоди, малини, къпини и боровинки
@@ -335,177 +151,149 @@ placeholder="Адрес за доставка, Еконт">
 <div class="products">
 
 <!-- Малини -->
- <div class="product">
 <a href="malini-konteiner.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="snimka5.jpg" alt="Целогодишни малини вкоренени в контейнер">
 <div class="info">
 <h3>Полка - целогодишни малини вкоренени в контейнер</h3>
 <p>Здрави растения с отлично прихващане.</p>
-<div class="price">Очакват се след 15ти юни</div>
- </div>
-</a>
-  <button class="cart-btn" 
-  onclick="addToCart('Малини Полка 2€/малки')">
-🛒 Добави 2€/малки
-</button>
- <button class="cart-btn" 
-  onclick="addToCart('Малини Полка 3€/2л')">
-🛒 Добави 3€/големи
-</button>
+<div class="price">Очакват се през юни, цена2€,3€</div>
 </div>
- 
+</div>
+</a>
+
 <!-- Къпини -->
- <div class="product">
 <a href="kupini triple crown.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="kupini.jpg" alt="Къпини без бодли Тройна корона ">
 <div class="info">
 <h3>Тройна корона Triple Crown - къпини без бодли.</h3>
+<div class="price">Очакват се през юни</div>
+</div>
 </div>
 </a>
- <button class="cart-btn" 
-  onclick="addToCart('Къпина Triple Crown 4€/бр')">
-🛒 Добави 4€/бр
-</button>
-</div>
- 
+
 <!-- Касис Богатир -->
- <div class="product">
 <a href="kasis.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="kasis.jpg" alt="Вкусен и едър касис Богатир, едроплоден">
 <div class="info">
 <h3>Черен касис Богатир.Едроплоден</h3>
-<div class="price">Очаква се след 15ти юни</div>
+<div class="price">4€ / 2л.контейнер Очаква се през юни</div>
+</div>
 </div>
 </a>
- <button class="cart-btn" 
-  onclick="addToCart('Черен касис 4€/бр')">
-🛒 Добави 4€/бр
-</button>
-</div>
 
 <!-- Червен касис -->
- <div class="product">
 <a href="cherven kasis.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="cherven kasis.jpg" alt="Вкусен и едър червен касис, едроплодно френско грозде">
 <div class="info">
 <h3>Червен касис (Френско грозде)</h3>
-<div class="price"> Очаква се през юли</div>
+<div class="price">4€ / 2л.контейнер Очаква се през юни</div>
+</div>
 </div>
 </a>
- <button class="cart-btn" 
-  onclick="addToCart('Червен касис 4€/бр')">
-🛒 Добави 4€/бр
-</button>
-</div>
 
 <!-- Йоща -->
- <div class="product">
 <a href="ioshta.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="ioshta.jpg" alt="Йоща, Йоща бери">
 <div class="info">
 <h3>Йоща бери (Ribes nidigrolaria)</h3>
-<div class="price">Очаква се след 20ти юни</div>
+<div class="price">4€ / 2л.контейнер Очаква се през юни</div>
+</div>
 </div>
 </a>
- <button class="cart-btn" 
-  onclick="addToCart('Йоща 4€/бр')">
-🛒 Добави 4€/бр
-</button>
-</div>
- 
+
 <!-- Боровинка 2 -->
- <div class="product">
 <a href="borovinki.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="borovinka-2god.jpg" alt="Двугодишна боровинка най-предпочитана за засаждане">
 <div class="info">
 <h3>Американска боровинка МАВЕРИК и ОНИЙЛ – двугодишни (1.5 л)</h3>
-<div class="price"></div>
+<div class="price">6 €</div>
+</div>
 </div>
 </a>
- <button class="cart-btn" 
-  onclick="addToCart('Маверик и Онийл 6€/бр')">
-🛒 Добави 6€/бр
-</button>
-</div>
 
 <!-- Ягоди Дарселект -->
- <div class="product">
 <a href="yagodi-darselect.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="yagodi-darselect1.jpg" alt="Разсад ягоди сорт Дарселект цена">
 <div class="info">
 <h3>Ягоди Дарселект (Darselect)</h3>
 <p>Чудесен благ вкус, превъзходен аромат и висок добив. Подходящ за масово засаждане.</p>
-<div class="price">21€/табла70. Очакват се през август / табла70</div>
+<div class="price">Очакват се през август / табла70</div>
+</div>
 </div>
 </a>
-</div>
- 
+
 <!-- Ягоди Азия -->
- <div class="product">
 <a href="yagodi-asia.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="yagodi-asia.jpg" alt="Разсад ягоди в табли сорт Азия">
 <div class="info">
 <h3>Ягоди Азия (Asia)– вкоренени в табли (70 бр-21€)</h3>
 <p>Много едри, яркочервени плодове с дълъг срок на годност</p>
-<div class="price">21€/табла70. Очакват се през септември / табла70</div>
+<div class="price">Очакват се през август / табла70</div>
+</div>
 </div>
 </a>
-</div>
 
 <!-- Бели ягоди Pineberry-->
- <div class="product">
 <a href="pineberry.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="pineberry.jpg" alt="Бели ягоди с вкус на ананас PINEBERRY">
 <div class="info">
 <h3>PINEBERRY - ЕКЗОТИЧНАТА БЯЛА ЯГОДА С ВКУС НА АНАНАС</h3>
 <p>Уникален външен вид – бели плодове с червени семена. Лек ананасов аромат и приятен вкус</p>
-<div class="price">Очакват се през септември</div>
+<div class="price">1 € / ограничени количества </div>
+</div>
 </div>
 </a>
-</div>
 
 
 <!-- Боровинка 3 -->
- <div class="product">
 <a href="borovinki.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="borovinka-3god.jpg" alt="Тригодишна боровинка в пълно плододаване">
 <div class="info">
 <h3>Американска боровинка – тригодишна (15 л)</h3>
 <div class="price">Изчерпани</div>
 </div>
-</a>
 </div>
+</a>
 
 <!-- Боровинки засаждане -->
- <div class="product">
 <a href="borovinki zasajdane.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="borovinki zasajdane.jpg" alt="Как се засаждат боровинки, засаждане на американски боровинки">
 <div class="info">
 <h3>Ръководство за засаждане на американска боровинка</h3>
 </div>
-</a>
 </div>
+</a>
 
 <!-- Вкисляване на почвата -->
- <div class="product">
 <a href="vkislqvane na pochvata.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="vkislqvane.jpg">
 <div class="info">
 <h3>Вкисляване на почвата</h3>
 </div>
-</a>
 </div>
-
+</a>
 
 <!-- Реални снимки от нашите насаждения -->
- <div class="product">
 <a href="snimki.html" style="text-decoration:none; color:inherit;">
+<div class="product">
 <img src="snimka.jpg">
 <div class="info">
 <h3>Реални снимки от нашите насаждения</h3>
 </div>
-</a>
 </div>
+</a>
 
 </div>
 </section>
@@ -556,93 +344,6 @@ placeholder="Адрес за доставка, Еконт">
 </a>
 
 </footer>
-
-<script>
-
-let cart = {};
-
-function addToCart(product) {
-
-  if(cart[product]) {
-    cart[product]++;
-  } else {
-    cart[product] = 1;
-  }
-
-  updateCart();
-
-  document.getElementById("cartSidebar")
-    .classList.add("open");
-}
-
-function changeQty(product, amount) {
-
-  cart[product] += amount;
-
-  if(cart[product] <= 0) {
-    delete cart[product];
-  }
-
-  updateCart();
-}
-
-function updateCart() {
-
-  let html = "";
-  let total = 0;
-  let hiddenProducts = [];
-
-  for(let product in cart) {
-
-    total += cart[product];
-
-    html += `
-      <div class="cart-item">
-
-        <div class="cart-title">
-          ${product}
-        </div>
-
-        <div class="cart-controls">
-
-          <button type="button"
-            onclick="changeQty('${product}', -1)">
-            −
-          </button>
-
-          <span>${cart[product]}</span>
-
-          <button type="button"
-            onclick="changeQty('${product}', 1)">
-            +
-          </button>
-
-        </div>
-
-      </div>
-    `;
-
-    hiddenProducts.push(
-      product + " x" + cart[product]
-    );
-  }
-
-  document.getElementById("cartContent")
-    .innerHTML = html;
-
-  document.getElementById("cartCount")
-    .innerText = total;
-
-  document.getElementById("productsField")
-    .value = hiddenProducts.join(", ");
-}
-
-function closeCart() {
-  document.getElementById("cartSidebar")
-    .classList.remove("open");
-}
-
-</script>
 
 </body>
 </html>
