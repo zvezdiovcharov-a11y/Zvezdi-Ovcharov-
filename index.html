@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
+
 <meta charset="UTF-8">
+
 <title>Разсад ягоди, малини, къпини и боровинки от производител | Топ цени – Разсадник Звезда</title>
+
 <link rel="icon" type="image/png" href="favicon.png">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="Качествени разсади ягоди, малини, къпини и американски боровинки директно от производител. Доставка в цяла България. Тел: 0877779963">
+
 <meta name="keywords" content="разсад ягоди, разсад ягоди гол корен, разсад ягоди табли, разсад боровинки, разсад малини, разсад къпини, производител разсад България">
-<meta name="author" content="Разсадник Звезди Овчаров">
+
+<meta name="author" content="Разсадник Звезда Овчаров">
+
 <meta name="robots" content="index, follow">
+
 <script type="application/ld+json">
 {
 "@context": "https://schema.org",
@@ -24,350 +34,2088 @@
 },
 "sameAs": [
 "https://wa.me/359877779963"
- ]
+]
 }
 </script>
+
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
 }
 
-body{
-line-height:1.5;
-background:#fafafa;
+body {
+line-height: 1.5;
+background: #fafafa;
+color: #222;
 }
 
-header{
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+/* ПЛАВАЩА КОШНИЦА */
+
+.cart-button {
+
+position: fixed;
+
+top: 20px;
+right: 20px;
+
+z-index: 9999;
+
+background: #198754;
+
+color: white;
+
+border: none;
+
+border-radius: 50px;
+
+padding: 13px 20px;
+
+font-size: 16px;
+
+font-weight: bold;
+
+cursor: pointer;
+
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+transition: 0.2s;
+
+}
+
+.cart-button:hover {
+
+transform: scale(1.05);
+
+background: #146c43;
+
+}
+
+
+/* HEADER */
+
+header {
+
+background:
+
+linear-gradient(
+rgba(0,0,0,0.5),
+rgba(0,0,0,0.5)
+),
+
 url('header.jpg') center/cover no-repeat;
-height:300px;
-color:white;
-text-align:center;
-padding:60px 20px;
+
+height: 300px;
+
+color: white;
+
+text-align: center;
+
+padding: 60px 20px;
+
 }
 
-header h1{
-font-size:16px;
-margin-bottom:15px;
+
+/* СЕКЦИИ */
+
+section {
+
+padding: 40px 15px;
+
+text-align: center;
+
 }
 
-header p{
-margin-bottom:20px;
+h2 {
+
+margin-bottom: 30px;
+
 }
 
-section{
-padding:40px 15px;
-text-align:center;
+
+/* FEATURES */
+
+.features {
+
+display: grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap: 15px;
+
 }
 
-h2{
-margin-bottom:30px;
+
+/* ПРОДУКТИ */
+
+.products {
+
+display: grid;
+
+grid-template-columns:
+repeat(2, 1fr);
+
+gap: 15px;
+
 }
 
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
+
+/* КАРТА */
+
+.product {
+
+background: white;
+
+border: 1px solid #ddd;
+
+border-radius: 8px;
+
+overflow: hidden;
+
+transition: 0.2s;
+
 }
 
-.products{
-display:grid;
-grid-template-columns:repeat(2, 1fr); /* 2 на ред */
-gap:15px;
+.product:hover {
+
+transform: scale(1.03);
+
 }
 
-.product:hover{
-transform:scale(1.03);
-transition:0.2s;
+.product img {
+
+width: 100%;
+
+height: auto;
+
+display: block;
+
 }
 
-.product{
-background:white;
-border:1px solid #ddd;
-border-radius:8px;
-overflow:hidden;
+.info {
+
+padding: 15px;
+
 }
 
-.product img{
-width:100%;
-height:auto;
-display:block;
+.price {
+
+margin-top: 15px;
+
+font-weight: bold;
+
+color: #e60023;
+
+font-size: 18px;
+
 }
 
-.info{
-padding:15px;
+
+/* БУТОН */
+
+.add-to-cart {
+
+margin-top: 15px;
+
+width: 100%;
+
+padding: 12px;
+
+background: #198754;
+
+color: white;
+
+border: none;
+
+border-radius: 6px;
+
+font-size: 15px;
+
+font-weight: bold;
+
+cursor: pointer;
+
 }
 
-.price{
-margin-top:15px;
-font-weight:bold;
-color:#e60023;
+.add-to-cart:hover {
+
+background: #146c43;
+
 }
 
-footer{
-background:#222;
-color:#ccc;
-text-align:center;
-padding:25px 15px;
+
+/* FOOTER */
+
+footer {
+
+background: #222;
+
+color: #ccc;
+
+text-align: center;
+
+padding: 25px 15px;
+
 }
 
-.whatsapp-bottom{
-margin-top:15px;
-display:inline-block;
-background:#25d366;
-color:white;
-padding:12px 25px;
-border-radius:5px;
-text-decoration:none;
-font-weight:bold;
+.whatsapp-bottom {
+
+margin-top: 15px;
+
+display: inline-block;
+
+background: #25d366;
+
+color: white;
+
+padding: 12px 25px;
+
+border-radius: 5px;
+
+text-decoration: none;
+
+font-weight: bold;
+
 }
+
+
+/* OVERLAY */
+
+.overlay {
+
+display: none;
+
+position: fixed;
+
+inset: 0;
+
+background: rgba(0,0,0,0.65);
+
+z-index: 10000;
+
+}
+
+
+/* КОШНИЦА */
+
+.cart-box {
+
+position: fixed;
+
+top: 50%;
+
+left: 50%;
+
+transform: translate(-50%, -50%);
+
+background: white;
+
+width: 95%;
+
+max-width: 650px;
+
+max-height: 90vh;
+
+overflow-y: auto;
+
+border-radius: 12px;
+
+padding: 25px;
+
+box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+
+}
+
+.cart-header {
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+border-bottom: 1px solid #ddd;
+
+padding-bottom: 15px;
+
+margin-bottom: 15px;
+
+}
+
+.close-cart {
+
+font-size: 28px;
+
+border: none;
+
+background: none;
+
+cursor: pointer;
+
+}
+
+
+/* ПРОДУКТ В КОШНИЦАТА */
+
+.cart-item {
+
+display: flex;
+
+align-items: center;
+
+gap: 12px;
+
+padding: 12px 0;
+
+border-bottom: 1px solid #eee;
+
+}
+
+.cart-item img {
+
+width: 70px;
+
+height: 70px;
+
+object-fit: cover;
+
+border-radius: 8px;
+
+}
+
+.cart-item-info {
+
+flex: 1;
+
+}
+
+.cart-item-info h4 {
+
+font-size: 15px;
+
+}
+
+.cart-price {
+
+color: #198754;
+
+font-weight: bold;
+
+}
+
+.quantity {
+
+display: flex;
+
+align-items: center;
+
+gap: 8px;
+
+}
+
+.quantity button {
+
+width: 28px;
+
+height: 28px;
+
+border: none;
+
+background: #198754;
+
+color: white;
+
+border-radius: 5px;
+
+font-size: 18px;
+
+cursor: pointer;
+
+}
+
+.remove-item {
+
+color: #e60023;
+
+background: none;
+
+border: none;
+
+font-size: 22px;
+
+cursor: pointer;
+
+}
+
+
+/* ОБЩО */
+
+.cart-total {
+
+text-align: right;
+
+font-size: 20px;
+
+font-weight: bold;
+
+margin-top: 20px;
+
+}
+
+
+/* БУТОН ПОРЪЧКА */
+
+.checkout-button {
+
+width: 100%;
+
+padding: 14px;
+
+margin-top: 20px;
+
+background: #198754;
+
+color: white;
+
+border: none;
+
+border-radius: 6px;
+
+font-size: 17px;
+
+font-weight: bold;
+
+cursor: pointer;
+
+}
+
+
+/* ФОРМА */
+
+.order-form {
+
+display: none;
+
+margin-top: 25px;
+
+border-top: 1px solid #ddd;
+
+padding-top: 20px;
+
+}
+
+.order-form h3 {
+
+margin-bottom: 15px;
+
+}
+
+.order-form input,
+
+.order-form select,
+
+.order-form textarea {
+
+width: 100%;
+
+padding: 13px;
+
+margin-bottom: 12px;
+
+border: 1px solid #ccc;
+
+border-radius: 6px;
+
+font-size: 15px;
+
+}
+
+.order-form textarea {
+
+min-height: 90px;
+
+resize: vertical;
+
+}
+
+.submit-order {
+
+width: 100%;
+
+padding: 15px;
+
+background: #e60023;
+
+color: white;
+
+border: none;
+
+border-radius: 6px;
+
+font-size: 17px;
+
+font-weight: bold;
+
+cursor: pointer;
+
+}
+
+
+/* УСПЕХ */
+
+.success-message {
+
+display: none;
+
+text-align: center;
+
+padding: 30px 10px;
+
+color: #198754;
+
+font-size: 20px;
+
+font-weight: bold;
+
+}
+
+
+/* МОБИЛЕН */
+
+@media (max-width: 600px) {
+
+.products {
+
+grid-template-columns: 1fr;
+
+}
+
+.cart-button {
+
+top: 10px;
+
+right: 10px;
+
+font-size: 14px;
+
+padding: 11px 15px;
+
+}
+
+.cart-box {
+
+padding: 18px;
+
+}
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <h1 style="text-align:center; padding:1px;">
+
 Разсад ягоди, малини, къпини и боровинки
+
 </h1>
 
-<header></header>
-<section>
-<div class="features">
-<div>🚚 Доставка в цяла България</div>
-<div>🌱 Реални разсади от производител<br> Звезди Овчаров</div>
 
-<a href="tel:0877779963"style="font-size:20px; font-weight:bold; color:red;">
+<header>
+
+</header>
+
+
+<section>
+
+<div class="features">
+
+<div>
+
+🚚 Доставка в цяла България
+
+</div>
+
+
+<div>
+
+🌱 Реални разсади от производител
+
+<br>
+
+Звезди Овчаров
+
+</div>
+
+
+<a href="tel:0877779963"
+
+style="font-size:20px; font-weight:bold; color:red;">
+
 📞 Поръчай сега: 0877779963
- </a>
+
+</a>
+
+</div>
 
 </section>
 
+
 <section>
-<h2>Нашите разсади</h2>
+
+<h2>
+
+Нашите разсади
+
+</h2>
+
 
 <div class="products">
 
-<!-- Малини -->
-<a href="malini-konteiner.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="snimka5.jpg" alt="Целогодишни малини вкоренени в контейнер">
-<div class="info">
-<h3>Полка - целогодишни малини вкоренени в контейнер</h3>
-<p>Здрави растения с отлично прихващане.</p>
-<div class="price">3€/2л.контейнер; 2€/0.500лконтейнер</div>
-</div>
-</div>
-</a>
 
-<!-- Къпини -->
-<a href="kupini triple crown.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="kupini.jpg" alt="Къпини без бодли Тройна корона ">
-<div class="info">
-<h3>Тройна корона Triple Crown - къпини без бодли.</h3>
-<div class="price">5€/2л.контейнер</div>
-</div>
-</div>
-</a>
+<!-- МАЛИНИ -->
 
-<!-- Касис Богатир -->
-<a href="kasis.html" style="text-decoration:none; color:inherit;">
 <div class="product">
-<img src="kasis.jpg" alt="Вкусен и едър касис Богатир, едроплоден">
-<div class="info">
-<h3>Черен касис Богатир.Едроплоден</h3>
-<div class="price">5€/2л.контейнер</div>
-</div>
-</div>
-</a>
 
-<!-- Червен касис -->
-<a href="cherven kasis.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="cherven kasis.jpg" alt="Вкусен и едър червен касис, едроплодно френско грозде">
-<div class="info">
-<h3>Червен касис (Френско грозде)</h3>
-<div class="price">5€ / 2л.контейнер</div>
-</div>
-</div>
-</a>
+<a href="malini-konteiner.html"
 
-<!-- Йоща -->
-<a href="ioshta.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="ioshta.jpg" alt="Йоща, Йоща бери">
-<div class="info">
-<h3>Йоща бери (Ribes nidigrolaria)</h3>
-<div class="price">5€ / 2л.контейнер</div>
-</div>
-</div>
-</a>
+style="text-decoration:none;color:inherit;">
 
-<!--Камчатика -->
-<a href="kamtschatica.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="kamtschatica.jpg" alt="Камчатика, Камчатска боровинка, Майска боровинка">
-<div class="info">
-<h3>Майска боровинка (Lonicera kamtschatica)</h3>
-<p>Непретенциозен, ранно плододаване.</p>
- <div class="price">5€ / 2л.контейнер</div>
-</div>
-</div>
-</a>
- 
-<!-- Боровинка 2 -->
-<a href="borovinki.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="borovinka-2god.jpg" alt="Двугодишна боровинка най-предпочитана за засаждане">
-<div class="info">
-<h3>Американска боровинка МАВЕРИК и ОНИЙЛ – двугодишни (1.5 л)</h3>
-<div class="price">6 €</div>
-</div>
-</div>
-</a>
+<img src="snimka5.jpg"
 
-<!-- Ягоди Дарселект -->
-<a href="yagodi-darselect.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="yagodi-darselect1.jpg" alt="Разсад ягоди сорт Дарселект цена">
-<div class="info">
-<h3>Ягоди Дарселект (Darselect)</h3>
-<p>Чудесен благ вкус, превъзходен аромат и висок добив. Подходящ за масово засаждане.</p>
-<div class="price">Очакват се през август / табла70</div>
-</div>
-</div>
-</a>
+alt="Целогодишни малини вкоренени в контейнер">
 
-<!-- Ягоди Магнус -->
-<a href="magnus.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="magnus.jpg" alt="Разсад ягоди къснозреещ сорт Магнус цена">
 <div class="info">
-<h3>Къснозрееща ягода Магнус(Magnus)</h3>
-<p>Отличава се с едри, атрактивни и изключително вкусни плодове. Подходящ за масово засаждане.</p>
-<div class="price">Очакват се през септември / табла70</div>
-</div>
-</div>
-</a>
- 
-<!-- Ягоди Азия -->
-<a href="yagodi-asia.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="yagodi-asia.jpg" alt="Разсад ягоди в табли сорт Азия">
-<div class="info">
-<h3>Ягоди Азия (Asia)– вкоренени в табли</h3>
-<p>Много едри, яркочервени плодове с дълъг срок на годност</p>
-<div class="price">Очакват се през август / табла70</div>
-</div>
-</div>
-</a>
 
-<!-- Бели ягоди Pineberry-->
-<a href="pineberry.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="pineberry.jpg" alt="Бели ягоди с вкус на ананас PINEBERRY">
-<div class="info">
-<h3>PINEBERRY - ЕКЗОТИЧНАТА БЯЛА ЯГОДА С ВКУС НА АНАНАС</h3>
-<p>Уникален външен вид – бели плодове с червени семена. Лек ананасов аромат и приятен вкус</p>
-<div class="price">1 € / очакват се през септември </div>
+<h3>
+
+Полка - целогодишни малини вкоренени в контейнер
+
+</h3>
+
+<p>
+
+Здрави растения с отлично прихващане.
+
+</p>
+
+<div class="price">
+
+3 € / 2 л контейнер
+
 </div>
+
 </div>
+
 </a>
 
 
-<!-- Боровинка 3 -->
-<a href="borovinki.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="borovinka-3god.jpg" alt="Тригодишна боровинка в пълно плододаване">
-<div class="info">
-<h3>Американска боровинка – тригодишна (15 л)</h3>
-<div class="price">Изчерпани</div>
-</div>
-</div>
-</a>
+<button
 
-<!-- Боровинки засаждане -->
-<a href="borovinki zasajdane.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="borovinki zasajdane.jpg" alt="Как се засаждат боровинки, засаждане на американски боровинки">
-<div class="info">
-<h3>Ръководство за засаждане на американска боровинка</h3>
-</div>
-</div>
-</a>
+class="add-to-cart"
 
-<!-- Вкисляване на почвата -->
-<a href="vkislqvane na pochvata.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="vkislqvane.jpg">
-<div class="info">
-<h3>Вкисляване на почвата</h3>
-</div>
-</div>
-</a>
+data-name="Малина Полка - 2 л контейнер"
 
-<!-- Реални снимки от нашите насаждения -->
-<a href="snimki.html" style="text-decoration:none; color:inherit;">
-<div class="product">
-<img src="snimka.jpg">
-<div class="info">
-<h3>Реални снимки от нашите насаждения</h3>
-</div>
-</div>
-</a>
+data-price="3"
+
+data-image="snimka5.jpg">
+
+🛒 Добави в кошницата
+
+</button>
 
 </div>
+
+
+<!-- КЪПИНИ -->
+
+<div class="product">
+
+<a href="kupini triple crown.html"
+
+style="text-decoration:none;color:inherit;">
+
+<img src="kupini.jpg"
+
+alt="Къпини без бодли Тройна корона">
+
+<div class="info">
+
+<h3>
+
+Тройна корона Triple Crown - къпини без бодли
+
+</h3>
+
+<div class="price">
+
+5 € / 2 л контейнер
+
+</div>
+
+</div>
+
+</a>
+
+
+<button
+
+class="add-to-cart"
+
+data-name="Къпина Triple Crown - 2 л контейнер"
+
+data-price="5"
+
+data-image="kupini.jpg">
+
+🛒 Добави в кошницата
+
+</button>
+
+</div>
+
+
+<!-- ЧЕРЕН КАСИС -->
+
+<div class="product">
+
+<a href="kasis.html"
+
+style="text-decoration:none;color:inherit;">
+
+<img src="kasis.jpg"
+
+alt="Черен касис Богатир">
+
+<div class="info">
+
+<h3>
+
+Черен касис Богатир - едроплоден
+
+</h3>
+
+<div class="price">
+
+5 € / 2 л контейнер
+
+</div>
+
+</div>
+
+</a>
+
+
+<button
+
+class="add-to-cart"
+
+data-name="Черен касис Богатир - 2 л контейнер"
+
+data-price="5"
+
+data-image="kasis.jpg">
+
+🛒 Добави в кошницата
+
+</button>
+
+</div>
+
+
+<!-- ЧЕРВЕН КАСИС -->
+
+<div class="product">
+
+<a href="cherven kasis.html"
+
+style="text-decoration:none;color:inherit;">
+
+<img src="cherven kasis.jpg"
+
+alt="Червен касис">
+
+<div class="info">
+
+<h3>
+
+Червен касис - френско грозде
+
+</h3>
+
+<div class="price">
+
+5 € / 2 л контейнер
+
+</div>
+
+</div>
+
+</a>
+
+
+<button
+
+class="add-to-cart"
+
+data-name="Червен касис - 2 л контейнер"
+
+data-price="5"
+
+data-image="cherven kasis.jpg">
+
+🛒 Добави в кошницата
+
+</button>
+
+</div>
+
+
+<!-- ЙОЩА -->
+
+<div class="product">
+
+<a href="ioshta.html"
+
+style="text-decoration:none;color:inherit;">
+
+<img src="ioshta.jpg"
+
+alt="Йоща бери">
+
+<div class="info">
+
+<h3>
+
+Йоща бери
+
+</h3>
+
+<div class="price">
+
+5 € / 2 л контейнер
+
+</div>
+
+</div>
+
+</a>
+
+
+<button
+
+class="add-to-cart"
+
+data-name="Йоща бери - 2 л контейнер"
+
+data-price="5"
+
+data-image="ioshta.jpg">
+
+🛒 Добави в кошницата
+
+</button>
+
+</div>
+
+
+<!-- КАМЧАТИКА -->
+
+<div class="product">
+
+<a href="kamtschatica.html"
+
+style="text-decoration:none;color:inherit;">
+
+<img src="kamtschatica.jpg"
+
+alt="Майска боровинка">
+
+<div class="info">
+
+<h3>
+
+Майска боровинка Lonicera kamtschatica
+
+</h3>
+
+<p>
+
+Непретенциозна и ранно плододаваща.
+
+</p>
+
+<div class="price">
+
+5 € / 2 л контейнер
+
+</div>
+
+</div>
+
+</a>
+
+
+<button
+
+class="add-to-cart"
+
+data-name="Майска боровинка - 2 л контейнер"
+
+data-price="5"
+
+data-image="kamtschatica.jpg">
+
+🛒 Добави в кошницата
+
+</button>
+
+</div>
+
+
+<!-- БОРОВИНКА -->
+
+<div class="product">
+
+<a href="borovinki.html"
+
+style="text-decoration:none;color:inherit;">
+
+<img src="borovinka-2god.jpg"
+
+alt="Двугодишна американска боровинка">
+
+<div class="info">
+
+<h3>
+
+Американска боровинка Маверик и Онийл - двугодишна
+
+</h3>
+
+<div class="price">
+
+6 €
+
+</div>
+
+</div>
+
+</a>
+
+
+<button
+
+class="add-to-cart"
+
+data-name="Американска боровинка Маверик и Онийл - двугодишна"
+
+data-price="6"
+
+data-image="borovinka-2god.jpg">
+
+🛒 Добави в кошницата
+
+</button>
+
+</div>
+
+
+<!-- ДАРСЕЛЕКТ -->
+
+<div class="product">
+
+<a href="yagodi-darselect.html"
+
+style="text-decoration:none;color:inherit;">
+
+<img src="yagodi-darselect1.jpg"
+
+alt="Разсад ягоди Дарселект">
+
+<div class="info">
+
+<h3>
+
+Ягоди Дарселект Darselect
+
+</h3>
+
+<p>
+
+Чудесен вкус, аромат и висок добив.
+
+</p>
+
+<div class="price">
+
+Очакват се през август / табла 70
+
+</div>
+
+</div>
+
+</a>
+
+
+<button
+
+class="add-to-cart"
+
+data-name="Разсад ягоди Дарселект - табла 70"
+
+data-price="0.30"
+
+data-image="yagodi-darselect1.jpg">
+
+🛒 Добави в кошницата
+
+</button>
+
+</div>
+
+
+<!-- МАГНУС -->
+
+<div class="product">
+
+<a href="magnus.html"
+
+style="text-decoration:none;color:inherit;">
+
+<img src="magnus.jpg"
+
+alt="Разсад ягоди къснозреещ сорт Магнус">
+
+<div class="info">
+
+<h3>
+
+Къснозрееща ягода Магнус Magnus
+
+</h3>
+
+<p>
+
+Едри, атрактивни и изключително вкусни плодове.
+
+</p>
+
+<div class="price">
+
+Очакват се през септември / табла 70
+
+</div>
+
+</div>
+
+</a>
+
+
+<button
+
+class="add-to-cart"
+
+data-name="Разсад ягоди Магнус - табла 70"
+
+data-price="0.30"
+
+data-image="magnus.jpg">
+
+🛒 Добави в кошницата
+
+</button>
+
+</div>
+
+
+<!-- АЗИЯ -->
+
+<div class="product">
+
+<a href="yagodi-asia.html"
+
+style="text-decoration:none;color:inherit;">
+
+<img src="yagodi-asia.jpg"
+
+alt="Разсад ягоди сорт Азия">
+
+<div class="info">
+
+<h3>
+
+Ягоди Азия Asia - вкоренени в табли
+
+</h3>
+
+<p>
+
+Много едри, яркочервени плодове.
+
+</p>
+
+<div class="price">
+
+Очакват се през август / табла 70
+
+</div>
+
+</div>
+
+</a>
+
+
+<button
+
+class="add-to-cart"
+
+data-name="Разсад ягоди Азия - табла 70"
+
+data-price="0.30"
+
+data-image="yagodi-asia.jpg">
+
+🛒 Добави в кошницата
+
+</button>
+
+</div>
+
+
+<!-- PINEBERRY -->
+
+<div class="product">
+
+<a href="pineberry.html"
+
+style="text-decoration:none;color:inherit;">
+
+<img src="pineberry.jpg"
+
+alt="Бели ягоди Pineberry">
+
+<div class="info">
+
+<h3>
+
+PINEBERRY - екзотичната бяла ягода с вкус на ананас
+
+</h3>
+
+<p>
+
+Бели плодове с червени семена.
+
+</p>
+
+<div class="price">
+
+1 €
+
+</div>
+
+</div>
+
+</a>
+
+
+<button
+
+class="add-to-cart"
+
+data-name="PINEBERRY - бяла ягода"
+
+data-price="1"
+
+data-image="pineberry.jpg">
+
+🛒 Добави в кошницата
+
+</button>
+
+</div>
+
+
+<!-- ТРИГОДИШНА БОРОВИНКА -->
+
+<div class="product">
+
+<a href="borovinki.html"
+
+style="text-decoration:none;color:inherit;">
+
+<img src="borovinka-3god.jpg"
+
+alt="Тригодишна американска боровинка">
+
+<div class="info">
+
+<h3>
+
+Американска боровинка - тригодишна
+
+</h3>
+
+<div class="price">
+
+Изчерпани
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+
+</div>
+
 </section>
+
+
 <section>
 
-<h2>Разсад ягоди, малини, къпини и боровинки директно от производител</h2>
+<h2>
+
+Разсад ягоди, малини, къпини и боровинки директно от производител
+
+</h2>
 
 <p>
-Предлагаме качествен разсад ягоди, малини, къпини и американски боровинки
-директно от производител. Растенията се отглеждат при контролирани условия
-и са подходящи както за любителски градини, така и за професионални
-насаждения.
+
+Предлагаме качествен разсад ягоди, малини, къпини и американски боровинки директно от производител.
+
+Растенията са подходящи както за любителски градини, така и за професионални насаждения.
+
 </p>
 
-<p>
-Нашият разсад ягоди е от доказани сортове с отличен вкус, аромат и
-висок добив. Предлагаме разсад ягоди на гол корен, както и вкоренени
-растения в табли с отлично прихващане.
-</p>
+<br>
 
 <p>
-В разсадника ще откриете още качествен разсад малини, къпини без бодли
-и американски боровинки на различна възраст. Всички растения са подбрани
-с цел висока продуктивност и лесно отглеждане.
-</p>
 
-<p>
-Изпращаме разсади в цяла България чрез куриер с бърза доставка.
-</p>
+Изпращаме разсади в цяла България чрез куриер.
 
-<p>
-Ако търсите надежден производител на разсад ягоди, боровинки,
-малини или къпини, можете да се свържете с нас за информация
-и поръчка.
 </p>
 
 </section>
+
+
 <footer>
+
 📞 Бърза поръчка:
-<a href="tel:0877779963" style="color:#ff4d4d; text-decoration:none;">
+
+<a href="tel:0877779963"
+
+style="color:#ff4d4d;text-decoration:none;">
+
 0877779963
+
 </a>
 
 <br><br>
 
-<a class="whatsapp-bottom" href="https://wa.me/359877779963">
+<a class="whatsapp-bottom"
+
+href="https://wa.me/359877779963">
+
 Поръчай по WhatsApp
+
 </a>
 
 </footer>
 
+
+<!-- БУТОН КОШНИЦА -->
+
+<button class="cart-button"
+
+onclick="openCart()">
+
+🛒 Кошница
+
+<span id="cartCount">0</span>
+
+</button>
+
+
+<!-- КОШНИЦА -->
+
+<div class="overlay"
+
+id="cartOverlay">
+
+<div class="cart-box">
+
+
+<div class="cart-header">
+
+<h2>
+
+🛒 Вашата кошница
+
+</h2>
+
+<button class="close-cart"
+
+onclick="closeCart()">
+
+×
+
+</button>
+
+</div>
+
+
+<div id="cartItems">
+
+</div>
+
+
+<div class="cart-total">
+
+Общо:
+
+<span id="cartTotal">
+
+0.00 €
+
+</span>
+
+</div>
+
+
+<button class="checkout-button"
+
+onclick="showOrderForm()">
+
+Продължи към поръчка
+
+</button>
+
+
+<!-- ФОРМА -->
+
+<div class="order-form"
+
+id="orderFormContainer">
+
+
+<h3>
+
+📦 Данни за доставка
+
+</h3>
+
+
+<form id="orderForm"
+
+action="https://formsubmit.co/ajax/zvezdi.ovcharov@gmail.com"
+
+method="POST">
+
+
+<input
+
+type="text"
+
+name="Име и фамилия"
+
+placeholder="Име и фамилия *"
+
+required>
+
+
+<input
+
+type="tel"
+
+name="Телефон"
+
+placeholder="Телефон *"
+
+required>
+
+
+<input
+
+type="email"
+
+name="Имейл"
+
+placeholder="Вашият имейл">
+
+
+<select
+
+name="Куриер"
+
+required>
+
+<option value="">
+
+Избери куриер *
+
+</option>
+
+<option value="Еконт">
+
+Еконт
+
+</option>
+
+<option value="Спиди">
+
+Спиди
+
+</option>
+
+</select>
+
+
+<select
+
+name="Начин на доставка"
+
+required>
+
+<option value="">
+
+Начин на доставка *
+
+</option>
+
+<option value="Офис на куриер">
+
+Офис на куриер
+
+</option>
+
+<option value="До адрес">
+
+До адрес
+
+</option>
+
+</select>
+
+
+<input
+
+type="text"
+
+name="Офис или адрес"
+
+placeholder="Офис на куриер или точен адрес *"
+
+required>
+
+
+<textarea
+
+name="Допълнителна информация"
+
+placeholder="Допълнителна информация">
+
+</textarea>
+
+
+<textarea
+
+name="Поръчани продукти"
+
+id="orderProducts"
+
+readonly
+
+style="display:none;">
+
+</textarea>
+
+
+<input
+
+type="hidden"
+
+name="Обща сума"
+
+id="orderTotal">
+
+
+<input
+
+type="hidden"
+
+name="_subject"
+
+value="Нова поръчка от Разсадник Звезда">
+
+
+<input
+
+type="hidden"
+
+name="_captcha"
+
+value="false">
+
+
+<input
+
+type="hidden"
+
+name="_template"
+
+value="table">
+
+
+<button
+
+type="submit"
+
+class="submit-order">
+
+✅ ИЗПРАТИ ПОРЪЧКАТА
+
+</button>
+
+
+</form>
+
+
+<div
+
+class="success-message"
+
+id="successMessage">
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+
+let cart = JSON.parse(
+
+localStorage.getItem("cart")
+
+) || [];
+
+
+// ДОБАВЯНЕ В КОШНИЦА
+
+document.querySelectorAll(".add-to-cart")
+
+.forEach(button => {
+
+
+button.addEventListener("click", function(e) {
+
+
+e.preventDefault();
+
+e.stopPropagation();
+
+
+const name = this.dataset.name;
+
+const price = parseFloat(this.dataset.price);
+
+const image = this.dataset.image;
+
+
+const existingProduct = cart.find(
+
+item => item.name === name
+
+);
+
+
+if(existingProduct) {
+
+existingProduct.quantity++;
+
+}
+
+else {
+
+cart.push({
+
+name: name,
+
+price: price,
+
+image: image,
+
+quantity: 1
+
+});
+
+}
+
+
+saveCart();
+
+updateCart();
+
+openCart();
+
+
+});
+
+});
+
+
+// ЗАПАЗВАНЕ
+
+function saveCart() {
+
+localStorage.setItem(
+
+"cart",
+
+JSON.stringify(cart)
+
+);
+
+}
+
+
+// ОБНОВЯВАНЕ
+
+function updateCart() {
+
+
+const cartItems = document.getElementById(
+
+"cartItems"
+
+);
+
+
+const cartCount = document.getElementById(
+
+"cartCount"
+
+);
+
+
+const cartTotal = document.getElementById(
+
+"cartTotal"
+
+);
+
+
+cartItems.innerHTML = "";
+
+
+let total = 0;
+
+let count = 0;
+
+
+cart.forEach((item,index) => {
+
+
+total += item.price * item.quantity;
+
+count += item.quantity;
+
+
+const div = document.createElement("div");
+
+div.className = "cart-item";
+
+
+div.innerHTML = `
+
+
+<img src="${item.image}">
+
+
+<div class="cart-item-info">
+
+
+<h4>
+
+${item.name}
+
+</h4>
+
+
+<div class="cart-price">
+
+${item.price.toFixed(2)} € × ${item.quantity}
+
+</div>
+
+
+</div>
+
+
+<div class="quantity">
+
+
+<button onclick="changeQuantity(${index},-1)">
+
+−
+
+</button>
+
+
+<span>
+
+${item.quantity}
+
+</span>
+
+
+<button onclick="changeQuantity(${index},1)">
+
++
+
+</button>
+
+
+</div>
+
+
+<button
+
+class="remove-item"
+
+onclick="removeItem(${index})">
+
+×
+
+</button>
+
+`;
+
+
+cartItems.appendChild(div);
+
+
+});
+
+
+cartCount.textContent = count;
+
+
+cartTotal.textContent =
+
+total.toFixed(2) + " €";
+
+
+}
+
+
+// КОЛИЧЕСТВО
+
+function changeQuantity(index, amount) {
+
+
+cart[index].quantity += amount;
+
+
+if(cart[index].quantity <= 0) {
+
+cart.splice(index,1);
+
+}
+
+
+saveCart();
+
+updateCart();
+
+
+}
+
+
+// ИЗТРИВАНЕ
+
+function removeItem(index) {
+
+
+cart.splice(index,1);
+
+
+saveCart();
+
+updateCart();
+
+
+}
+
+
+// ОТВАРЯНЕ
+
+function openCart() {
+
+
+document.getElementById(
+
+"cartOverlay"
+
+).style.display = "block";
+
+
+updateCart();
+
+
+}
+
+
+// ЗАТВАРЯНЕ
+
+function closeCart() {
+
+
+document.getElementById(
+
+"cartOverlay"
+
+).style.display = "none";
+
+
+}
+
+
+// ФОРМА
+
+function showOrderForm() {
+
+
+if(cart.length === 0) {
+
+
+alert(
+
+"Кошницата е празна."
+
+);
+
+
+return;
+
+}
+
+
+document.getElementById(
+
+"orderFormContainer"
+
+).style.display = "block";
+
+
+let productsText = "";
+
+let total = 0;
+
+
+cart.forEach(item => {
+
+
+const itemTotal =
+
+item.price * item.quantity;
+
+
+total += itemTotal;
+
+
+productsText +=
+
+item.name +
+
+" | Количество: " +
+
+item.quantity +
+
+" | Общо: " +
+
+itemTotal.toFixed(2) +
+
+" €\n";
+
+
+});
+
+
+document.getElementById(
+
+"orderProducts"
+
+).value = productsText;
+
+
+document.getElementById(
+
+"orderTotal"
+
+).value =
+
+total.toFixed(2) + " €";
+
+
+document.getElementById(
+
+"orderFormContainer"
+
+).scrollIntoView({
+
+behavior: "smooth"
+
+});
+
+
+}
+
+
+// ИЗПРАЩАНЕ
+
+document.getElementById(
+
+"orderForm"
+
+).addEventListener(
+
+"submit",
+
+function(e) {
+
+
+e.preventDefault();
+
+
+const form = this;
+
+
+const formData = new FormData(form);
+
+
+fetch(form.action, {
+
+
+method: "POST",
+
+body: formData,
+
+headers: {
+
+"Accept": "application/json"
+
+}
+
+})
+
+
+.then(response => {
+
+
+if(response.ok) {
+
+
+document.getElementById(
+
+"orderFormContainer"
+
+).innerHTML = `
+
+
+<div
+
+class="success-message"
+
+style="display:block">
+
+
+✅ Поръчката е изпратена успешно!
+
+
+<br><br>
+
+
+Благодарим Ви!
+
+
+<br><br>
+
+
+Ще се свържем с Вас за потвърждение.
+
+
+</div>
+
+`;
+
+
+cart = [];
+
+
+saveCart();
+
+
+updateCart();
+
+
+}
+
+else {
+
+
+alert(
+
+"Възникна проблем при изпращането. Моля, опитайте отново."
+
+);
+
+
+}
+
+})
+
+
+.catch(error => {
+
+
+alert(
+
+"Възникна грешка при изпращането на поръчката."
+
+);
+
+
+});
+
+
+});
+
+
+updateCart();
+
+
+</script>
+
+
 </body>
+
 </html>
