@@ -289,6 +289,35 @@ function App() {
     return { count, subtotal, discount, total: subtotal - discount };
   }, [cart]);
 
+  const productSchema = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      itemListElement: products.map((product, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Product",
+          name: product.title,
+          description: product.description,
+          image: `https://razsadnik-zvezda.netlify.app${product.image}`,
+          sku: product.id,
+          category: product.category,
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "EUR",
+            price: product.price,
+            availability: product.available
+              ? "https://schema.org/InStock"
+              : "https://schema.org/OutOfStock",
+            url: "https://razsadnik-zvezda.netlify.app/#products",
+          },
+        },
+      })),
+    }),
+    [],
+  );
+
   function saveCart(nextCart) {
     setCart(nextCart);
     localStorage.setItem("zvezda-cart", JSON.stringify(nextCart));
@@ -352,6 +381,10 @@ function App() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <header className="site-header">
         <nav className="topbar" aria-label="Основна навигация">
           <a className="brand" href="#top" aria-label="Разсадник Звезда">
@@ -434,7 +467,12 @@ function App() {
           {visibleProducts.map((product) => (
             <article className="product-card" key={product.id}>
               <button className="image-button" type="button" onClick={() => setActiveProduct(product)}>
-                <img src={product.image} alt={product.title} />
+                <img
+                  src={product.image}
+                  alt={`${product.title} - ${product.subtitle}`}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <span>{product.badge}</span>
               </button>
               <div className="product-body">
@@ -465,8 +503,14 @@ function App() {
             </button>
           </div>
           <div className="gallery">
-            {activeProduct.gallery.map((image) => (
-              <img src={image} alt={activeProduct.title} key={image} />
+            {activeProduct.gallery.map((image, index) => (
+              <img
+                src={image}
+                alt={`${activeProduct.title} - снимка ${index + 1}`}
+                loading="lazy"
+                decoding="async"
+                key={image}
+              />
             ))}
           </div>
         </section>
@@ -479,7 +523,7 @@ function App() {
           <div className="guide-grid">
             {guides.map((guide) => (
               <article className="guide-card" key={guide.title}>
-                <img src={guide.image} alt={guide.title} />
+                <img src={guide.image} alt={guide.title} loading="lazy" decoding="async" />
                 <div>
                   <h3>{guide.title}</h3>
                   <p>{guide.text}</p>
