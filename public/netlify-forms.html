@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Netlify Forms detection</title>
+  </head>
+  <body>
+    <!--
+      Този файл не се показва на потребителите. Netlify сканира публикуваните
+      HTML файлове по време на deploy, за да открие формите - тъй като реалната
+      форма се рендира с React (checkout страницата), Netlify не може да я види
+      директно, затова тук има статично копие само с полетата, за да може
+      Netlify да разпознае формата "order" и да пази изпратените поръчки в
+      Site settings -> Forms.
+    -->
+    <form name="order" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="Име" />
+      <input type="text" name="Фамилия" />
+      <input type="tel" name="Телефон" />
+      <textarea name="Адрес"></textarea>
+      <textarea name="Допълнителна информация"></textarea>
+      <textarea name="Покупки от кошницата"></textarea>
+      <input type="text" name="Междинна сума" />
+      <input type="text" name="Отстъпка" />
+      <input type="text" name="Обща сума" />
+      <input type="text" name="bot-field" />
+    </form>
+  </body>
+</html>
