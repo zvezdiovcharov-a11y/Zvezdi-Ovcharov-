@@ -8,8 +8,8 @@ export default function GuidePage({ guide }) {
     headline: guide.title,
     description: guide.excerpt,
     image: `https://razsadnik-zvezda.netlify.app${guide.image}`,
-    author: { "@type": "Organization", name: "Разсадник Звезда Овчаров" },
-    publisher: { "@type": "Organization", name: "Разсадник Звезда Овчаров" },
+    author: { "@type": "Organization", name: "Разсадник Звезди Овчаров" },
+    publisher: { "@type": "Organization", name: "Разсадник Звезди Овчаров" },
     mainEntityOfPage: `https://razsadnik-zvezda.netlify.app/guide/${guide.slug}`,
   };
 

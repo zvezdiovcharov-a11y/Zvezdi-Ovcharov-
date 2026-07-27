@@ -79,6 +79,10 @@ export function matchRoute(pathname) {
   if (pathname === "/gallery" || pathname === "/gallery/") return { name: "gallery" };
   if (pathname === "/cart" || pathname === "/cart/") return { name: "cart" };
   if (pathname === "/checkout" || pathname === "/checkout/") return { name: "checkout" };
+  if (pathname === "/politika-za-poveritelnost" || pathname === "/politika-za-poveritelnost/") {
+    return { name: "privacy" };
+  }
+  if (pathname === "/obshti-uslovia" || pathname === "/obshti-uslovia/") return { name: "terms" };
 
   return { name: "not-found" };
 }

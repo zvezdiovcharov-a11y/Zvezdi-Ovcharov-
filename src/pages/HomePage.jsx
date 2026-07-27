@@ -19,7 +19,7 @@ export default function HomePage() {
             <p className="eyebrow">Директно от производител</p>
             <h1>Разсад ягоди, малини, къпини, касис и боровинки</h1>
             <p>
-              Реални растения от разсадник Звезда Овчаров, подбрани за добро прихващане и доставка в цяла България.
+              Реални растения от разсадник Звезди Овчаров, подбрани за добро прихващане и доставка в цяла България.
             </p>
             <div className="hero-actions">
               <a href="#products" className="primary-action">
@@ -90,7 +90,7 @@ export default function HomePage() {
           <Link to="/gallery" className="guide-card">
             <img
               src="/images/snimka1.jpg"
-              alt="Реални снимки от насажденията на разсадник Звезда"
+              alt="Реални снимки от насажденията на разсадник Звезди"
               loading="lazy"
               decoding="async"
             />

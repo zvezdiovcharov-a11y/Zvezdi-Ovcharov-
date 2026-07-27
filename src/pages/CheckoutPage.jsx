@@ -180,7 +180,7 @@ export default function CheckoutPage() {
           <input type="hidden" name="Междинна сума" value={formatPrice(totals.subtotal)} />
           <input type="hidden" name="Отстъпка" value={formatPrice(totals.discount)} />
           <input type="hidden" name="Обща сума" value={formatPrice(totals.total)} />
-          <input type="hidden" name="_subject" value="Нова поръчка от Разсадник Звезда" />
+          <input type="hidden" name="_subject" value="Нова поръчка от Разсадник Звезди" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
 

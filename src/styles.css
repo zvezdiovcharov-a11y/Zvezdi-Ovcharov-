@@ -912,14 +912,39 @@ button:disabled {
   border-top: 1px solid var(--line);
   padding: 34px 0 44px;
   display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: var(--ink);
+}
+
+.footer-top {
+  display: flex;
   justify-content: space-between;
   gap: 24px;
-  color: var(--ink);
 }
 
 .site-footer p {
   max-width: 640px;
   margin: 8px 0 0;
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-legal a {
+  color: var(--ink);
+  opacity: 0.75;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.footer-legal a:hover {
+  opacity: 1;
 }
 
 .footer-actions {
@@ -1274,7 +1299,7 @@ button:disabled {
   }
 
   .intro-section,
-  .site-footer {
+  .footer-top {
     align-items: flex-start;
     flex-direction: column;
   }

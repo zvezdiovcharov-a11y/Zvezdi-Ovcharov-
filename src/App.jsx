@@ -11,6 +11,8 @@ import GuidePage from "./pages/GuidePage.jsx";
 import GalleryPage from "./pages/GalleryPage.jsx";
 import CartPage from "./pages/CartPage.jsx";
 import CheckoutPage from "./pages/CheckoutPage.jsx";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.jsx";
+import TermsPage from "./pages/TermsPage.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 function Page({ route }) {
@@ -31,6 +33,10 @@ function Page({ route }) {
       return <CartPage />;
     case "checkout":
       return <CheckoutPage />;
+    case "privacy":
+      return <PrivacyPolicyPage />;
+    case "terms":
+      return <TermsPage />;
     default:
       return <NotFoundPage />;
   }

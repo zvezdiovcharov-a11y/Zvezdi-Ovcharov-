@@ -51,11 +51,11 @@ export default function Header() {
   return (
     <header className={isHidden ? "site-header header-hidden" : "site-header"}>
       <nav className="topbar" aria-label="Основна навигация">
-        <Link to="/" className="brand" aria-label="Разсадник Звезда">
+        <Link to="/" className="brand" aria-label="Разсадник Звезди">
           <span className="brand-mark">
             <Leaf size={20} />
           </span>
-          <span>Разсадник Звезда</span>
+          <span>Разсадник Звезди</span>
         </Link>
 
         <ul className={isMenuOpen ? "nav-menu open" : "nav-menu"}>

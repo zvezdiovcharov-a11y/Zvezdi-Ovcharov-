@@ -27,7 +27,7 @@ export default function GalleryPage() {
             onClick={() => setLightboxIndex(index)}
             aria-label={`Виж снимка ${index + 1} на цял екран`}
           >
-            <img src={image} alt={`Разсадник Звезда - снимка ${index + 1}`} loading="lazy" decoding="async" />
+            <img src={image} alt={`Разсадник Звезди - снимка ${index + 1}`} loading="lazy" decoding="async" />
           </button>
         ))}
       </div>
@@ -36,7 +36,7 @@ export default function GalleryPage() {
         <Lightbox
           images={galleryImages}
           index={lightboxIndex}
-          alt="Разсадник Звезда"
+          alt="Разсадник Звезди"
           onClose={() => setLightboxIndex(null)}
           onNavigate={setLightboxIndex}
         />
