@@ -3,7 +3,7 @@ import { CheckCircle2 } from "lucide-react";
 import { Link } from "../router.jsx";
 import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
-import { submitNetlifyForm } from "../utils/netlifyForm.js";
+import { submitOrderForm } from "../utils/formSubmit.js";
 import { validateOrderForm } from "../utils/validate.js";
 
 function orderText(cart) {
@@ -35,9 +35,9 @@ export default function CheckoutPage() {
     setErrors({});
 
     setStatus("sending");
-    submitNetlifyForm(form)
+    submitOrderForm(form)
       .then((response) => {
-        if (!response.ok) throw new Error("Netlify Forms error");
+        if (!response.ok) throw new Error("FormSubmit error");
         setStatus("sent");
         clearCart();
       })
@@ -114,19 +114,11 @@ export default function CheckoutPage() {
           </div>
         </div>
 
-        <form
-          className="checkout-form"
-          name="order"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
-        >
-          <input type="hidden" name="form-name" value="order" />
+        <form className="checkout-form" method="POST" onSubmit={handleSubmit}>
           <p className="hidden-field" aria-hidden="true">
             <label>
               Не попълвайте това поле
-              <input name="bot-field" tabIndex={-1} autoComplete="off" />
+              <input name="_honey" tabIndex={-1} autoComplete="off" />
             </label>
           </p>
 
@@ -182,6 +174,9 @@ export default function CheckoutPage() {
           <input type="hidden" name="Междинна сума" value={formatPrice(totals.subtotal)} />
           <input type="hidden" name="Отстъпка" value={formatPrice(totals.discount)} />
           <input type="hidden" name="Обща сума" value={formatPrice(totals.total)} />
+          <input type="hidden" name="_subject" value="Нова поръчка от Разсадник Звезда" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
 
           {status === "error" && (
             <p className="form-error">
