@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { Link } from "../router.jsx";
+import CustomSelect from "../components/CustomSelect.jsx";
 import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
 import { submitOrderForm } from "../utils/formSubmit.js";
@@ -21,6 +22,7 @@ export default function CheckoutPage() {
   const { cart, totals, clearCart } = useCart();
   const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
+  const [courier, setCourier] = useState("Еконт");
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -154,6 +156,10 @@ export default function CheckoutPage() {
               className={errors["Телефон"] ? "invalid" : ""}
             />
             {errors["Телефон"] && <span className="field-error">{errors["Телефон"]}</span>}
+          </label>
+          <label>
+            Куриерска фирма
+            <CustomSelect name="Куриерска фирма" options={["Еконт", "Спиди"]} value={courier} onChange={setCourier} />
           </label>
           <label>
             Адрес за доставка
