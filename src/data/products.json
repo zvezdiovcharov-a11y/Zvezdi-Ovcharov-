@@ -172,14 +172,14 @@
     "title": "Pineberry",
     "subtitle": "Бяла ягода с вкус на ананас",
     "category": "Ягоди",
-    "price": 1,
+    "price": 0,
     "unit": "бр.",
     "badge": "Очаква се през септември",
     "image": "/images/pineberry.jpg",
     "gallery": ["/images/pineberry.jpg"],
     "description": "Екзотична бяла ягода с червени семена и лек ананасов аромат. Интересен сорт за градини и колекционери.",
     "highlights": ["Рядък сорт", "Бели плодове", "Лек ананасов вкус"],
-    "available": true
+    "available": false
   },
   {
     "id": "magnus",
