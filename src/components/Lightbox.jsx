@@ -1,7 +1,11 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
+const SWIPE_THRESHOLD = 50;
+
 export default function Lightbox({ images, index, alt, onClose, onNavigate }) {
+  const touchStartRef = useRef(null);
+
   const goPrev = useCallback(
     () => onNavigate((index - 1 + images.length) % images.length),
     [index, images.length, onNavigate],
@@ -18,8 +22,35 @@ export default function Lightbox({ images, index, alt, onClose, onNavigate }) {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [onClose, goPrev, goNext]);
 
+  function handleTouchStart(event) {
+    const touch = event.touches[0];
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+  }
+
+  function handleTouchEnd(event) {
+    const start = touchStartRef.current;
+    touchStartRef.current = null;
+    if (!start || images.length < 2) return;
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - start.x;
+    const deltaY = touch.clientY - start.y;
+    if (Math.abs(deltaX) < SWIPE_THRESHOLD || Math.abs(deltaX) < Math.abs(deltaY)) return;
+
+    if (deltaX > 0) goPrev();
+    else goNext();
+  }
+
   return (
-    <div className="lightbox" role="dialog" aria-modal="true" aria-label={alt} onClick={onClose}>
+    <div
+      className="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label={alt}
+      onClick={onClose}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <button className="lightbox-close" type="button" onClick={onClose} aria-label="Затвори">
         <X size={26} />
       </button>
