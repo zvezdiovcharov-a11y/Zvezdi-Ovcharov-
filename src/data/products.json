@@ -22,10 +22,10 @@
     {
     "id": "buddy-tray",
     "title": "Ягоди Бъди (Buddy)",
-    "subtitle": "Вкоренени в табли, 70 бр.",
+    "subtitle": "Вкоренени в табли, 35 бр.",
     "category": "Ягоди",
-    "price": 0.50,
-    "unit": "табла 70 бр.",
+    "price": 17.50,
+    "unit": "Табла 35 бр.",
     "badge": "Налично",
     "image":  "/images/Buddy.jpg",
     "gallery": [
