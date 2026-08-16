@@ -1,21 +1,22 @@
 [
-  {
-    "id": "blueberry-2",
-    "title": "Американска боровинка Маверик и Онийл",
-    "subtitle": "Двугодишна, 1.5 л контейнер + 2 л почва подарък",
-    "category": "Боровинки",
-    "price": 8,
-    "unit": "бр.",
+    {
+    "id": "darselect-tray",
+    "title": "Ягоди Darselect",
+    "subtitle": "Вкоренени в табли, 70 бр.",
+    "category": "Ягоди",
+    "price": 25,
+    "unit": "табла 70 бр.",
     "badge": "Налично",
-    "image": "/images/borovinka-2god.jpg",
+    "image": "/images/yagodi-darselect1.jpg",
     "gallery": [
-      "/images/borovinka.jpg",
-      "/images/borovinka1.jpeg",
-      "/images/borovinka-2god.jpg",
-      "/images/borovinka-2god1.jpg"
+      "/images/yagodi-tably1.jpg",
+      "/images/darselect.jpg",
+      "/images/darselect1.jpg",
+      "/images/yagodi-darselect1.jpg",
+      "/images/yagodi-darselect2.jpg"
     ],
-    "description": "Киселолюбиви растения с нужда от слънчево място, добра влажност и кисела почва pH 4.0-5.5. Препоръчва се засаждане на поне два сорта за по-добро опрашване.",
-    "highlights": ["Маверик и Онийл", "Подходящи за градина", "Почва подарък"],
+    "description": "  >Чудесен благ вкус, превъзходен аромат и висок добив. Подходящ за масово засаждане ",
+    "highlights": ["Табла 70 бр.", "Висок добив", "Чудесен вкус и аромат", "Добра транспортируемост"],
     "available": true
   },
   {
@@ -67,8 +68,41 @@
     "badge": "Без бодли",
     "image": "/images/kupini.jpg",
     "gallery": ["/images/kupini.jpg", "/images/kupini Triple crown1.jpg"],
-    "description": "Изключително устойчив сорт, лесен за отглеждане, с едри, сочни и ароматни плодове. Подходящ за прясна консумация, сладка, сосове и десерти.",
+    "description": "Изключително устойчив сорт, лесен за отглеждане, с едри, сочни и ароматни плодове. Подходящ за прясна консумация, сладка, сокове и десерти.",
     "highlights": ["Без бодли", "Едри плодове", "Лесно отглеждане"],
+    "available": true
+  },
+  {
+    "id": "blueberry-2",
+    "title": "Американска боровинка Маверик и Онийл",
+    "subtitle": "Двугодишна, 1.5 л контейнер + 2 л почва подарък",
+    "category": "Боровинки",
+    "price": 8,
+    "unit": "бр.",
+    "badge": "Налично",
+    "image": "/images/borovinka-2god.jpg",
+    "gallery": [
+      "/images/borovinka.jpg",
+      "/images/borovinka1.jpeg",
+      "/images/borovinka-2god.jpg",
+      "/images/borovinka-2god1.jpg"
+    ],
+    "description": "Киселолюбиви растения с нужда от слънчево място, добра влажност и кисела почва pH 4.0-5.5. Препоръчва се засаждане на поне два сорта за по-добро опрашване.",
+    "highlights": ["Маверик и Онийл", "Подходящи за градина", "Почва подарък"],
+    "available": true
+  },
+    {
+    "id": "honeyberry",
+    "title": "Майска боровинка",
+    "subtitle": "Lonicera kamtschatica, 2 л контейнер",
+    "category": "Други плодни",
+    "price": 6,
+    "unit": "2 л контейнер",
+    "badge": "Много ранна",
+    "image": "/images/kamtschatica.jpg",
+    "gallery": ["/images/kamtschatica.jpg", "/images/kamtschatica1.jpg"],
+    "description": "Студоустойчив овощен храст с продълговати синьо-лилави плодове. Узрява още през май и е непретенциозен за отглеждане.",
+    "highlights": ["Ранно плододаване", "Студоустойчивост до -40°C", "Богата на антиоксиданти"],
     "available": true
   },
   {
@@ -116,41 +150,6 @@
     "gallery": ["/images/ioshta.jpg", "/images/ioshta1.jpg"],
     "description": "Хибрид между касис и цариградско грозде с тъмни, сочни плодове и приятен сладко-кисел вкус. Устойчив храст без бодли.",
     "highlights": ["Високодобивен храст", "До 1.5-2 м", "Прясна консумация и сокове"],
-    "available": true
-  },
-  {
-    "id": "honeyberry",
-    "title": "Майска боровинка",
-    "subtitle": "Lonicera kamtschatica, 2 л контейнер",
-    "category": "Други плодни",
-    "price": 6,
-    "unit": "2 л контейнер",
-    "badge": "Много ранна",
-    "image": "/images/kamtschatica.jpg",
-    "gallery": ["/images/kamtschatica.jpg", "/images/kamtschatica1.jpg"],
-    "description": "Студоустойчив овощен храст с продълговати синьо-лилави плодове. Узрява още през май и е непретенциозен за отглеждане.",
-    "highlights": ["Ранно плододаване", "Студоустойчивост до -40°C", "Богата на антиоксиданти"],
-    "available": true
-  },
-  {
-    "id": "darselect-tray",
-    "title": "Ягоди Darselect",
-    "subtitle": "Вкоренени в табли, 70 бр.",
-    "category": "Ягоди",
-    "price": 25,
-    "unit": "табла 70 бр.",
-    "badge": "Очакват се през август",
-    "image": "/images/yagodi-darselect1.jpg",
-    "gallery": [
-      "/images/yagodi-gol-koren.jpg",
-      "/images/yagodi-tably1.jpg",
-      "/images/darselect.jpg",
-      "/images/darselect1.jpg",
-      "/images/yagodi-darselect1.jpg",
-      "/images/yagodi-darselect2.jpg"
-    ],
-    "description": "Френски средноранен сорт с едри конусовидни плодове, отличен аромат и много добър вкус. Подходящ за домашни и търговски насаждения.",
-    "highlights": ["Табла 70 бр.", "Висок добив", "Добра транспортируемост"],
     "available": true
   },
   {
