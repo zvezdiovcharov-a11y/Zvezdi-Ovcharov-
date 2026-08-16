@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "../router.jsx";
 import { useCart } from "../context/CartContext.jsx";
@@ -7,7 +7,14 @@ import Lightbox from "../components/Lightbox.jsx";
 
 export default function ProductPage({ product }) {
   const { addToCart } = useCart();
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const hasMultipleImages = product.gallery.length > 1;
+
+  useEffect(() => {
+    setSelectedIndex(0);
+    setLightboxIndex(null);
+  }, [product.id]);
 
   return (
     <section className="section product-page">
@@ -22,27 +29,43 @@ export default function ProductPage({ product }) {
         </div>
 
         <div className="product-page-gallery">
-          <div className="gallery">
-            {product.gallery.map((image, index) => (
-              <button
-                type="button"
-                className={index === 0 ? "gallery-thumb gallery-thumb-primary" : "gallery-thumb"}
-                key={image}
-                onClick={() => setLightboxIndex(index)}
-                aria-label={`Виж ${product.title} на цял екран - снимка ${index + 1}`}
-              >
-                <img
-                  src={image}
-                  alt={`${product.title} - снимка ${index + 1}`}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                />
-                {index === 0 && product.gallery.length > 1 && (
-                  <span className="gallery-more-badge">+{product.gallery.length - 1} снимки</span>
-                )}
-              </button>
-            ))}
-          </div>
+          <button
+            type="button"
+            className="product-gallery-main"
+            onClick={() => setLightboxIndex(selectedIndex)}
+            aria-label={`Виж ${product.title} на цял екран - снимка ${selectedIndex + 1}`}
+          >
+            <img
+              src={product.gallery[selectedIndex]}
+              alt={`${product.title} - снимка ${selectedIndex + 1}`}
+              loading="eager"
+              decoding="async"
+            />
+          </button>
+
+          {hasMultipleImages && (
+            <div className="product-gallery-thumbs">
+              {product.gallery.map((image, index) => (
+                <button
+                  type="button"
+                  key={image}
+                  className={
+                    index === selectedIndex ? "product-gallery-thumb is-active" : "product-gallery-thumb"
+                  }
+                  onClick={() => setSelectedIndex(index)}
+                  aria-label={`Покажи снимка ${index + 1} от ${product.title}`}
+                  aria-current={index === selectedIndex}
+                >
+                  <img
+                    src={image}
+                    alt={`${product.title} - миниатюра ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="product-page-info">
