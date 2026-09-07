@@ -20,6 +20,24 @@
     "available": true
   },
   {
+    "id": "clery-tray",
+    "title": "Ягоди Клери",
+    "subtitle": "Вкоренени в табли, 70бр",
+    "category": "Ягоди",
+    "price":25,
+    "unit": "Табла 70бр.",
+    "badge": "Ранен",
+    "image": "/images/Clery.jpg",
+    "gallery": [
+        "/images/Clery.jpg",
+        "/images/Clery1.jpg",
+        "/images/Clery2.jpg"
+    ],
+    "description": "Екзотична бяла ягода с червени семена и лек ананасов аромат. Интересен сорт за градини и колекционери.",
+    "highlights": ["Табла 70 бр.", "Висок добив", "Чудесен вкус и аромат", "Добра транспортируемост"],
+    "available": true
+  },
+  {
     "id": "buddy-tray",
     "title": "Ягоди Бъди (Buddy)",
     "subtitle": "Вкоренени в табли, 35 бр.",
