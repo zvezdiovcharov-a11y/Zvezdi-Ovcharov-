@@ -55,6 +55,34 @@
     "available": true
   },
   {
+    "id": "pineberry",
+    "title": "Pineberry",
+    "subtitle": "Бяла ягода с вкус на ананас",
+    "category": "Ягоди",
+    "price": 1,
+    "unit": "бр.",
+    "badge": "Наличен",
+    "image": "/images/pineberry.jpg",
+    "gallery": ["/images/pineberry.jpg"],
+    "description": "Екзотична бяла ягода с червени семена и лек ананасов аромат. Интересен сорт за градини и колекционери.",
+    "highlights": ["Рядък сорт", "Бели плодове", "Лек ананасов вкус"],
+    "available": true
+  },    
+  {
+    "id": "magnus",
+    "title": "Ягода Magnus",
+    "subtitle": "Къснозреещ сорт",
+    "category": "Ягоди",
+    "price": 0,
+    "unit": "",
+    "badge": "Очаква се през октомври",
+    "image": "/images/magnus.jpg",
+    "gallery": ["/images/magnus.jpg", "/images/magnus1.jpg"],
+    "description": "Къснозреещ сорт с едри, атрактивни и сладки плодове. Удължава сезона на ягодите, когато повечето други сортове вече са приключили.",
+    "highlights": ["Късно узряване", "Едри плодове", "Добра устойчивост"],
+    "available": false
+  },   
+  {
     "id": "raspberry-polka-2l",
     "title": "Малина Полка",
     "subtitle": "Целогодишна малина, вкоренена в 2 л контейнер",
@@ -73,24 +101,6 @@
     ],
     "description": "Популярен ремонтантен сорт с едри, ароматни и вкусни червени плодове. Плододава от средата на юли до есента и е подходящ за прясна консумация и производство.",
     "highlights": ["Едри плодове", "Дълъг период на плододаване", "Отлично прихващане"],
-    "available": true
-  },
-  {
-    "id": "raspberry-polka-05l",
-    "title": "Малина Полка",
-    "subtitle": "Вкоренена в 0.5 л контейнер",
-    "category": "Малини",
-    "price": 2,
-    "unit": "0.5 л контейнер",
-    "badge": "Компактен разсад",
-    "image": "/images/malini konteiner0.5l.jpg",
-    "gallery": [
-      "/images/malini konteiner0.5l.jpg",
-      "/images/malini polka.jpg",
-      "/images/malini polka1.jpg"
-    ],
-    "description": "По-малък контейнер със здраво вкоренен разсад Полка. Практичен избор за по-големи количества и засаждане в редове.",
-    "highlights": ["2 EUR за 0.5 л", "Подходяща за редово засаждане", "Устойчив сорт"],
     "available": true
   },
   {
@@ -218,31 +228,21 @@
     "available": false
   },
   {
-    "id": "pineberry",
-    "title": "Pineberry",
-    "subtitle": "Бяла ягода с вкус на ананас",
-    "category": "Ягоди",
+    "id": "raspberry-polka-05l",
+    "title": "Малина Полка",
+    "subtitle": "Вкоренена в 0.5 л контейнер",
+    "category": "Малини",
     "price": 0,
-    "unit": "бр.",
-    "badge": "Очаква се през септември",
-    "image": "/images/pineberry.jpg",
-    "gallery": ["/images/pineberry.jpg"],
-    "description": "Екзотична бяла ягода с червени семена и лек ананасов аромат. Интересен сорт за градини и колекционери.",
-    "highlights": ["Рядък сорт", "Бели плодове", "Лек ананасов вкус"],
-    "available": false
-  },
-  {
-    "id": "magnus",
-    "title": "Ягода Magnus",
-    "subtitle": "Къснозреещ сорт",
-    "category": "Ягоди",
-    "price": 0,
-    "unit": "",
-    "badge": "Очаква се през септември",
-    "image": "/images/magnus.jpg",
-    "gallery": ["/images/magnus.jpg", "/images/magnus1.jpg"],
-    "description": "Къснозреещ сорт с едри, атрактивни и сладки плодове. Удължава сезона на ягодите, когато повечето други сортове вече са приключили.",
-    "highlights": ["Късно узряване", "Едри плодове", "Добра устойчивост"],
+    "unit": "0.5 л контейнер",
+    "badge": "Изчерпани",
+    "image": "/images/malini konteiner0.5l.jpg",
+    "gallery": [
+      "/images/malini konteiner0.5l.jpg",
+      "/images/malini polka.jpg",
+      "/images/malini polka1.jpg"
+    ],
+    "description": "По-малък контейнер със здраво вкоренен разсад Полка. Практичен избор за по-големи количества и засаждане в редове.",
+    "highlights": ["2 EUR за 0.5 л", "Подходяща за редово засаждане", "Устойчив сорт"],
     "available": false
   },
   {
