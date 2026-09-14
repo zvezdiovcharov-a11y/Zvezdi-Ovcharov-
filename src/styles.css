@@ -1166,6 +1166,33 @@ button:disabled {
   font-weight: 800;
 }
 
+.quantity-input {
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1em;
+  font-family: inherit;
+  color: inherit;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  padding: 0;
+  -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity-input:hover,
+.quantity-input:focus {
+  border-color: var(--line);
+  background: #fff;
+}
+
 .totals {
   margin: 18px 0;
   padding: 16px;

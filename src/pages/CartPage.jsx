@@ -5,7 +5,21 @@ import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
 
 export default function CartPage() {
-  const { cart, totals, changeQuantity, removeFromCart } = useCart();
+  const { cart, totals, changeQuantity, setQuantity, removeFromCart } = useCart();
+
+  function handleQuantityInput(event, productId) {
+    const raw = event.target.value.replace(/[^\d]/g, "");
+    event.target.value = raw;
+  }
+
+  function commitQuantity(event, productId) {
+    const value = event.target.value;
+    if (value === "") {
+      event.target.value = String(cart.find((item) => item.id === productId)?.quantity ?? 1);
+      return;
+    }
+    setQuantity(productId, value);
+  }
 
   return (
     <section className="section cart-page">
@@ -39,7 +53,21 @@ export default function CartPage() {
                   <button type="button" onClick={() => changeQuantity(item.id, -1)} aria-label="Намали">
                     <Minus size={16} />
                   </button>
-                  <span>{item.quantity}</span>
+                  <input
+                    key={item.quantity}
+                    type="text"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    className="quantity-input"
+                    defaultValue={item.quantity}
+                    aria-label={`Количество за ${item.title}`}
+                    onChange={(event) => handleQuantityInput(event, item.id)}
+                    onBlur={(event) => commitQuantity(event, item.id)}
+                    onFocus={(event) => event.target.select()}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter") event.target.blur();
+                    }}
+                  />
                   <button type="button" onClick={() => changeQuantity(item.id, 1)} aria-label="Увеличи">
                     <Plus size={16} />
                   </button>

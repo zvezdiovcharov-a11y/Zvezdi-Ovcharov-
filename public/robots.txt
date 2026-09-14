@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://razsadnik-zvezda.netlify.app/sitemap.xml
+Sitemap: https://razsadnik-zvezda.app/sitemap.xml

@@ -61,6 +61,14 @@ export function CartProvider({ children }) {
     saveCart(nextCart);
   }
 
+  function setQuantity(productId, quantity) {
+    const safeQuantity = Math.max(1, Math.floor(Number(quantity)) || 1);
+    const nextCart = cart.map((item) =>
+      item.id === productId ? { ...item, quantity: safeQuantity } : item,
+    );
+    saveCart(nextCart);
+  }
+
   function removeFromCart(productId) {
     saveCart(cart.filter((item) => item.id !== productId));
   }
@@ -76,7 +84,17 @@ export function CartProvider({ children }) {
     return { count, subtotal, discount, total: subtotal - discount };
   }, [cart]);
 
-  const value = { cart, totals, addToCart, changeQuantity, removeFromCart, clearCart, toasts, dismissToast };
+  const value = {
+    cart,
+    totals,
+    addToCart,
+    changeQuantity,
+    setQuantity,
+    removeFromCart,
+    clearCart,
+    toasts,
+    dismissToast,
+  };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
