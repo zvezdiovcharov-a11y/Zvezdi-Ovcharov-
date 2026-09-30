@@ -4,7 +4,7 @@ import { Link } from "../router.jsx";
 import CustomSelect from "../components/CustomSelect.jsx";
 import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
-import { submitOrderForm } from "../utils/formSubmit.js";
+import { submitOrderForm, buildMailtoFallback } from "../utils/formSubmit.js";
 import { validateOrderForm } from "../utils/validate.js";
 
 function orderText(cart) {
@@ -18,11 +18,22 @@ function orderText(cart) {
     .join("\n");
 }
 
+function orderSummaryText(cart, totals) {
+  return [
+    orderText(cart),
+    "",
+    `Междинна сума: ${formatPrice(totals.subtotal)}`,
+    `Отстъпка: ${formatPrice(totals.discount)}`,
+    `Обща сума: ${formatPrice(totals.total)}`,
+  ].join("\n");
+}
+
 export default function CheckoutPage() {
   const { cart, totals, clearCart } = useCart();
   const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
   const [courier, setCourier] = useState("Еконт");
+  const [mailtoFallback, setMailtoFallback] = useState(null);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -45,6 +56,7 @@ export default function CheckoutPage() {
       })
       .catch(() => {
         setStatus("error");
+        setMailtoFallback(buildMailtoFallback(formData, orderSummaryText(cart, totals)));
       });
   }
 
@@ -116,7 +128,8 @@ export default function CheckoutPage() {
           </div>
         </div>
 
-        <form className="checkout-form" method="POST" onSubmit={handleSubmit}>
+        <form className="checkout-form" name="order" method="POST" onSubmit={handleSubmit}>
+          <input type="hidden" name="form-name" value="order" />
           <p className="hidden-field" aria-hidden="true">
             <label>
               Не попълвайте това поле
@@ -180,14 +193,19 @@ export default function CheckoutPage() {
           <input type="hidden" name="Междинна сума" value={formatPrice(totals.subtotal)} />
           <input type="hidden" name="Отстъпка" value={formatPrice(totals.discount)} />
           <input type="hidden" name="Обща сума" value={formatPrice(totals.total)} />
-          <input type="hidden" name="_subject" value="Нова поръчка от Разсадник Звезди" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
 
           {status === "error" && (
-            <p className="form-error">
-              Възникна проблем при изпращането. Моля, опитайте отново или се обадете на 0877779963.
-            </p>
+            <div className="form-error-box">
+              <p className="form-error">
+                Възникна временен проблем с автоматичното изпращане. Моля, опитайте отново, обадете се на
+                0877779963, или довършете поръчката директно по имейл.
+              </p>
+              {mailtoFallback && (
+                <a href={mailtoFallback} className="primary-action" target="_blank" rel="noreferrer">
+                  Довърши поръчката по имейл
+                </a>
+              )}
+            </div>
           )}
 
           <button className="submit-order" type="submit" disabled={status === "sending"}>

@@ -69,6 +69,22 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Static form for Netlify's build-time bot to detect; the real form is rendered by React and submitted via fetch. -->
+    <form name="order" data-netlify="true" netlify-honeypot="_honey" hidden>
+      <input type="text" name="Име" />
+      <input type="text" name="Фамилия" />
+      <input type="tel" name="Телефон" />
+      <input type="text" name="Куриерска фирма" />
+      <textarea name="Адрес"></textarea>
+      <textarea name="Допълнителна информация"></textarea>
+      <input type="text" name="Покупки от кошницата" />
+      <input type="text" name="Междинна сума" />
+      <input type="text" name="Отстъпка" />
+      <input type="text" name="Обща сума" />
+      <input type="text" name="_honey" />
+    </form>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
