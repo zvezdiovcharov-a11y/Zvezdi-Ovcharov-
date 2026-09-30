@@ -1230,15 +1230,6 @@ button:disabled {
   font-weight: 700;
 }
 
-.form-error-box {
-  display: grid;
-  gap: 10px;
-}
-
-.form-error-box .primary-action {
-  justify-self: start;
-}
-
 .field-error {
   color: var(--rose);
   font-size: 13px;

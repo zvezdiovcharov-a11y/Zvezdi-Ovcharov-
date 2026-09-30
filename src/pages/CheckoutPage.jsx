@@ -4,7 +4,7 @@ import { Link } from "../router.jsx";
 import CustomSelect from "../components/CustomSelect.jsx";
 import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
-import { submitOrderForm, buildMailtoFallback } from "../utils/formSubmit.js";
+import { submitOrderForm } from "../utils/formSubmit.js";
 import { validateOrderForm } from "../utils/validate.js";
 
 function orderText(cart) {
@@ -18,22 +18,11 @@ function orderText(cart) {
     .join("\n");
 }
 
-function orderSummaryText(cart, totals) {
-  return [
-    orderText(cart),
-    "",
-    `Междинна сума: ${formatPrice(totals.subtotal)}`,
-    `Отстъпка: ${formatPrice(totals.discount)}`,
-    `Обща сума: ${formatPrice(totals.total)}`,
-  ].join("\n");
-}
-
 export default function CheckoutPage() {
   const { cart, totals, clearCart } = useCart();
   const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
   const [courier, setCourier] = useState("Еконт");
-  const [mailtoFallback, setMailtoFallback] = useState(null);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -50,13 +39,12 @@ export default function CheckoutPage() {
     setStatus("sending");
     submitOrderForm(form)
       .then((response) => {
-        if (!response.ok) throw new Error("FormSubmit error");
+        if (!response.ok) throw new Error("Netlify Forms error");
         setStatus("sent");
         clearCart();
       })
       .catch(() => {
         setStatus("error");
-        setMailtoFallback(buildMailtoFallback(formData, orderSummaryText(cart, totals)));
       });
   }
 
@@ -195,17 +183,9 @@ export default function CheckoutPage() {
           <input type="hidden" name="Обща сума" value={formatPrice(totals.total)} />
 
           {status === "error" && (
-            <div className="form-error-box">
-              <p className="form-error">
-                Възникна временен проблем с автоматичното изпращане. Моля, опитайте отново, обадете се на
-                0877779963, или довършете поръчката директно по имейл.
-              </p>
-              {mailtoFallback && (
-                <a href={mailtoFallback} className="primary-action" target="_blank" rel="noreferrer">
-                  Довърши поръчката по имейл
-                </a>
-              )}
-            </div>
+            <p className="form-error">
+              Възникна проблем при изпращането. Моля, опитайте отново или се обадете на 0877779963.
+            </p>
           )}
 
           <button className="submit-order" type="submit" disabled={status === "sending"}>
