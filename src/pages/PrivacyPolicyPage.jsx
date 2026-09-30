@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "../router.jsx";
+import { useSEO } from "../hooks/useSEO.js";
 
 export default function PrivacyPolicyPage() {
+  useSEO({
+    title: "Политика за поверителност | Разсадник Звезди",
+    description: "Как Разсадник Звезди обработва личните данни на клиентите при поръчка на разсади.",
+    path: "/politika-za-poveritelnost",
+  });
+
   return (
     <section className="section legal-page">
       <div className="section-heading">
@@ -15,7 +22,7 @@ export default function PrivacyPolicyPage() {
           <p>
             Звездалин Насков Овчаров, земеделски производител, ЕИК 179388953, адрес: с. Галище, община Мадан,
             област Смолян („Разсадник Звезди Овчаров“, „ние“), е администратор на личните данни, които
-            обработва във връзка с поръчки, направени през сайта razsadnik-zvezda.netlify.app. За въпроси
+            обработва във връзка с поръчки, направени през сайта razsadnik-zvezda.app. За въпроси
             относно обработването на лични данни можете да се свържете с нас на имейл{" "}
             <a href="mailto:zvezdi.ovcharov@gmail.com">zvezdi.ovcharov@gmail.com</a> или на телефон{" "}
             <a href="tel:0877779963">0877779963</a>.

@@ -1,16 +1,24 @@
 import React from "react";
 import { Link } from "../router.jsx";
+import { useSEO } from "../hooks/useSEO.js";
 
 export default function GuidePage({ guide }) {
+  useSEO({
+    title: `${guide.title} | Разсадник Звезди`,
+    description: guide.excerpt,
+    path: `/guide/${guide.slug}`,
+    image: guide.image,
+  });
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: guide.title,
     description: guide.excerpt,
-    image: `https://razsadnik-zvezda.netlify.app${guide.image}`,
+    image: `https://razsadnik-zvezda.app${guide.image}`,
     author: { "@type": "Organization", name: "Разсадник Звезди Овчаров" },
     publisher: { "@type": "Organization", name: "Разсадник Звезди Овчаров" },
-    mainEntityOfPage: `https://razsadnik-zvezda.netlify.app/guide/${guide.slug}`,
+    mainEntityOfPage: `https://razsadnik-zvezda.app/guide/${guide.slug}`,
   };
 
   return (

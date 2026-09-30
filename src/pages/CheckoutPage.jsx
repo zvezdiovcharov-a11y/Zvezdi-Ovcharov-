@@ -6,6 +6,7 @@ import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
 import { submitOrderForm } from "../utils/formSubmit.js";
 import { validateOrderForm } from "../utils/validate.js";
+import { useSEO } from "../hooks/useSEO.js";
 
 function orderText(cart) {
   return cart
@@ -19,6 +20,13 @@ function orderText(cart) {
 }
 
 export default function CheckoutPage() {
+  useSEO({
+    title: "Поръчка | Разсадник Звезди",
+    description: "Въведете данни за доставка и завършете поръчката си от Разсадник Звезди.",
+    path: "/checkout",
+    noindex: true,
+  });
+
   const { cart, totals, clearCart } = useCart();
   const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});

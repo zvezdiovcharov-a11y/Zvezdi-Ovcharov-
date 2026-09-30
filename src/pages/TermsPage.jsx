@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "../router.jsx";
+import { useSEO } from "../hooks/useSEO.js";
 
 export default function TermsPage() {
+  useSEO({
+    title: "Общи условия | Разсадник Звезди",
+    description: "Общи условия за поръчка на разсади ягоди, малини, къпини, касис и боровинки от Разсадник Звезди.",
+    path: "/obshti-uslovia",
+  });
+
   return (
     <section className="section legal-page">
       <div className="section-heading">
@@ -23,7 +30,7 @@ export default function TermsPage() {
           <h2>2. Предмет</h2>
           <p>
             Настоящите Общи условия уреждат отношенията между Търговеца и потребителите, ползващи сайта
-            razsadnik-zvezda.netlify.app („Сайтът“) за поръчка на разсади ягоди, малини, къпини, касис,
+            razsadnik-zvezda.app („Сайтът“) за поръчка на разсади ягоди, малини, къпини, касис,
             боровинки и други („Стоките“).
           </p>
 

@@ -3,8 +3,15 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "../router.jsx";
 import { galleryImages } from "../data/gallery.js";
 import Lightbox from "../components/Lightbox.jsx";
+import { useSEO } from "../hooks/useSEO.js";
 
 export default function GalleryPage() {
+  useSEO({
+    title: "Галерия със снимки от разсадника | Разсадник Звезди",
+    description: "Реални снимки от насажденията, контейнерите и плодовете на разсадник Звезди Овчаров.",
+    path: "/gallery",
+  });
+
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
   return (

@@ -3,8 +3,16 @@ import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { Link } from "../router.jsx";
 import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
+import { useSEO } from "../hooks/useSEO.js";
 
 export default function CartPage() {
+  useSEO({
+    title: "Кошница | Разсадник Звезди",
+    description: "Прегледайте продуктите в количката си преди поръчка от Разсадник Звезди.",
+    path: "/cart",
+    noindex: true,
+  });
+
   const { cart, totals, changeQuantity, setQuantity, removeFromCart } = useCart();
 
   function handleQuantityInput(event, productId) {

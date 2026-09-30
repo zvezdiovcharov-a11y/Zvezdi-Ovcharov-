@@ -4,8 +4,17 @@ import { Link } from "../router.jsx";
 import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
 import Lightbox from "../components/Lightbox.jsx";
+import { useSEO, truncateForMeta } from "../hooks/useSEO.js";
 
 export default function ProductPage({ product }) {
+  useSEO({
+    title: `${product.title} - ${product.subtitle} | Разсадник Звезди`,
+    description: truncateForMeta(product.description),
+    path: `/product/${product.id}`,
+    image: product.image,
+    noindex: !product.available,
+  });
+
   const { addToCart } = useCart();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState(null);

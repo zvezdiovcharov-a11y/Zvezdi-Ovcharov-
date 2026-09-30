@@ -67,7 +67,7 @@ export default function App() {
           "@type": "Product",
           name: product.title,
           description: product.description,
-          image: `https://razsadnik-zvezda.netlify.app${product.image}`,
+          image: `https://razsadnik-zvezda.app${product.image}`,
           sku: product.id,
           category: product.category,
           offers: {
@@ -75,7 +75,7 @@ export default function App() {
             priceCurrency: "EUR",
             price: product.price,
             availability: product.available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-            url: `https://razsadnik-zvezda.netlify.app/product/${product.id}`,
+            url: `https://razsadnik-zvezda.app/product/${product.id}`,
           },
         },
       })),

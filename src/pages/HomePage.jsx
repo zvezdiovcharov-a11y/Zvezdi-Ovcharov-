@@ -4,8 +4,16 @@ import { Link } from "../router.jsx";
 import { products, categories } from "../data/products.js";
 import { guides } from "../data/guides.js";
 import ProductCard from "../components/ProductCard.jsx";
+import { useSEO } from "../hooks/useSEO.js";
 
 export default function HomePage() {
+  useSEO({
+    title: "Разсад ягоди, малини, къпини и боровинки | Разсадник Звезди",
+    description:
+      "Качествени разсади ягоди, малини, къпини, касис и американски боровинки директно от производител. Доставка в цяла България.",
+    path: "/",
+  });
+
   const [selectedCategory, setSelectedCategory] = useState("Всички");
 
   const visibleProducts =
