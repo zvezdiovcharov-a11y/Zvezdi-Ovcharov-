@@ -24,6 +24,13 @@ function setCanonical(href) {
   el.setAttribute("href", href);
 }
 
+function encodeImagePath(image) {
+  return image
+    .split("/")
+    .map((segment) => encodeURIComponent(segment))
+    .join("/");
+}
+
 export function truncateForMeta(text, maxLength = 160) {
   if (!text) return "";
   const clean = text.replace(/\s+/g, " ").trim();
@@ -35,7 +42,7 @@ export function truncateForMeta(text, maxLength = 160) {
 export function useSEO({ title, description, path, image, noindex = false }) {
   useEffect(() => {
     const url = `${SITE_URL}${path}`;
-    const resolvedImage = image ? `${SITE_URL}${image}` : DEFAULT_IMAGE;
+    const resolvedImage = image ? `${SITE_URL}${encodeImagePath(image)}` : DEFAULT_IMAGE;
 
     document.title = title;
     setMetaByAttr("name", "description", description);
