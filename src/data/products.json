@@ -192,7 +192,7 @@
     "unit": "2 л контейнер",
     "badge": "Студоустойчив",
     "image": "/images/kasis.jpg",
-    "gallery": ["/images/kasis.jpg", "/images/kasis1.jpg"],
+    "gallery": ["/images/kasis.jpg", "/       images/kasis1.jpg", "/images/kasis2.jpg" ],
     "description": "Едроплоден черен касис с мощен растеж, висока производителност и балансиран сладко-кисел вкус. Плодовете са подходящи за свежа консумация, сокове и консервиране.",
     "highlights": ["Едроплоден", "До около 4 кг от развит храст", "Силен аромат"],
     "available": true
@@ -210,7 +210,8 @@
       "/images/cherven kasis.jpg",
       "/images/cherven kasis1.jpg",
       "/images/cherven kasis2.jpg",
-      "/images/cherven kasis3.jpg"
+      "/images/cherven kasis3.jpg",
+      "/images/cherven kasis4.jpg"
     ],
     "description": "Непретенциозен градински храст с ярки червени плодове и свеж кисел вкус. Подходящ за десерти, желета и прясна консумация.",
     "highlights": ["Богат на антиоксиданти", "Слънце или лека полусянка", "Редовно плододаване"],
@@ -228,6 +229,22 @@
     "gallery": ["/images/ioshta.jpg", "/images/ioshta1.jpg"],
     "description": "Хибрид между касис и цариградско грозде с тъмни, сочни плодове и приятен сладко-кисел вкус. Устойчив храст без бодли.",
     "highlights": ["Високодобивен храст", "До 1.5-2 м", "Прясна консумация и сокове"],
+    "available": true
+  },
+  {
+    "id": "homemade-jam",
+    "title": "Домашно сладко Къпини",
+    "subtitle": "Собствено производство",
+    "category": "Домашни сладка",
+    "price": 3.50,
+    "unit": "буркан 0.314кг",
+    "badge": "Къпини",
+    "image": "/images/sladko.jpg",
+    "gallery": ["/images/sladko.jpg", 
+"/images/sladko1.jpg", 
+"/images/sladko2.jpg"],
+    "description": "Домашно сладко ръчно приготвено, плодове от собствена градина, добре узрели и качествени! Цената е равна на цената на плодовете! Купете и си спестете пари и време! Състав и пропорция: 🫐1кг плодове, 0.500гр захар, 1пакетче лимонена киселина. ",
+    "highlights": ["Домашно", "Лесно", "Вкусно"],
     "available": true
   },
   {
