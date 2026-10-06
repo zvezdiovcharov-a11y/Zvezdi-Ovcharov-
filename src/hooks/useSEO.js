@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://razsadnik-zvezda.app";
+export const SITE_URL = "https://razsadnik-zvezda.app";
 const DEFAULT_IMAGE = `${SITE_URL}/images/header.jpg`;
 
 function setMetaByAttr(attr, key, content) {
@@ -24,7 +24,7 @@ function setCanonical(href) {
   el.setAttribute("href", href);
 }
 
-function encodeImagePath(image) {
+export function encodeImagePath(image) {
   return image
     .split("/")
     .map((segment) => encodeURIComponent(segment))

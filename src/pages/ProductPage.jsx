@@ -4,7 +4,7 @@ import { Link } from "../router.jsx";
 import { useCart } from "../context/CartContext.jsx";
 import { formatPrice } from "../utils/format.js";
 import Lightbox from "../components/Lightbox.jsx";
-import { useSEO, truncateForMeta } from "../hooks/useSEO.js";
+import { useSEO, truncateForMeta, SITE_URL, encodeImagePath } from "../hooks/useSEO.js";
 
 export default function ProductPage({ product }) {
   useSEO({
@@ -14,6 +14,40 @@ export default function ProductPage({ product }) {
     image: product.image,
     noindex: !product.available,
   });
+
+  const productUrl = `${SITE_URL}/product/${product.id}`;
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.title,
+    description: truncateForMeta(product.description, 500),
+    image: `${SITE_URL}${encodeImagePath(product.image)}`,
+    sku: product.id,
+    category: product.category,
+    url: productUrl,
+    brand: { "@type": "Brand", name: "Разсадник Звезди Овчаров" },
+    offers: {
+      "@type": "Offer",
+      url: productUrl,
+      priceCurrency: "EUR",
+      price: product.price,
+      availability: product.available
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+      itemCondition: "https://schema.org/NewCondition",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Начало", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: product.category, item: `${SITE_URL}/#products` },
+      { "@type": "ListItem", position: 3, name: product.title, item: productUrl },
+    ],
+  };
 
   const { addToCart } = useCart();
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -27,6 +61,9 @@ export default function ProductPage({ product }) {
 
   return (
     <section className="section product-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
       <Link to="/#products" className="back-link">
         <ArrowLeft size={16} /> Обратно към продуктите
       </Link>

@@ -30,7 +30,7 @@ function encodeImagePath(image) {
     .join("/");
 }
 
-function renderPage({ title, description, path: routePath, image }) {
+function renderPage({ title, description, path: routePath, image, structuredData = [] }) {
   const url = `${SITE_URL}${routePath}`;
   const absImage = image ? `${SITE_URL}${encodeImagePath(image)}` : `${SITE_URL}/images/header.jpg`;
   const safeTitle = escapeHtml(title);
@@ -75,7 +75,62 @@ function renderPage({ title, description, path: routePath, image }) {
     `<meta name="twitter:image" content="${absImage}" />`,
   );
 
+  if (structuredData.length > 0) {
+    const scripts = structuredData
+      .map((schema) => `    <script type="application/ld+json">${JSON.stringify(schema)}</script>`)
+      .join("\n");
+    html = html.replace("</head>", `${scripts}\n  </head>`);
+  }
+
   return html;
+}
+
+function buildProductSchema(product) {
+  const url = `${SITE_URL}/product/${product.id}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.title,
+    description: truncateForMeta(product.description, 500),
+    image: `${SITE_URL}${encodeImagePath(product.image)}`,
+    sku: product.id,
+    category: product.category,
+    url,
+    brand: { "@type": "Brand", name: SITE_NAME + " Овчаров" },
+    offers: {
+      "@type": "Offer",
+      url,
+      priceCurrency: "EUR",
+      price: product.price,
+      availability: product.available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      itemCondition: "https://schema.org/NewCondition",
+    },
+  };
+}
+
+function buildProductBreadcrumbSchema(product) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Начало", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: product.category, item: `${SITE_URL}/#products` },
+      { "@type": "ListItem", position: 3, name: product.title, item: `${SITE_URL}/product/${product.id}` },
+    ],
+  };
+}
+
+function buildGuideSchema(guide) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: guide.title,
+    description: guide.excerpt,
+    image: `${SITE_URL}${encodeImagePath(guide.image)}`,
+    author: { "@type": "Organization", name: SITE_NAME + " Овчаров" },
+    publisher: { "@type": "Organization", name: SITE_NAME + " Овчаров" },
+    mainEntityOfPage: `${SITE_URL}/guide/${guide.slug}`,
+  };
 }
 
 function writeSnapshot(routePath, html) {
@@ -92,6 +147,7 @@ for (const product of products.filter((item) => item.available)) {
     description: truncateForMeta(product.description),
     path: `/product/${product.id}`,
     image: product.image,
+    structuredData: [buildProductSchema(product), buildProductBreadcrumbSchema(product)],
   });
   writeSnapshot(`product/${product.id}`, html);
   count += 1;
@@ -103,6 +159,7 @@ for (const guide of guides) {
     description: guide.excerpt,
     path: `/guide/${guide.slug}`,
     image: guide.image,
+    structuredData: [buildGuideSchema(guide)],
   });
   writeSnapshot(`guide/${guide.slug}`, html);
   count += 1;
