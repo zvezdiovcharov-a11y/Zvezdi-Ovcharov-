@@ -233,7 +233,9 @@
     "unit": "",
     "badge": "Изчерпани",
     "image": "/images/Asia.jpg",
-    "gallery": ["/images/Asia.jpg", "/images/yagodi-tably.jpg", "/images/yagodi-asia.jpg"],
+    "gallery": ["/images/Asia.jpg", 
+    "/images/yagodi-tably.jpg", 
+    "/images/yagodi-asia.jpg"],
     "description": "Много едри плодове с дълга конична форма, яркочервени, с добра устойчивост на обработка и дълъг срок на годност. Високодобивен сорт, ценен от производители с взискателни клиенти.",
     "highlights": ["Едри конични плодове", "Дълъг срок на годност", "Много високи добиви"],
     "available": false
