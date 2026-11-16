@@ -94,14 +94,6 @@ export default function CartPage() {
 
           <div className="cart-summary">
             <div className="totals">
-              <div>
-                <span>Междинна сума</span>
-                <strong>{formatPrice(totals.subtotal)}</strong>
-              </div>
-              <div>
-                <span>Отстъпка над 100 EUR</span>
-                <strong>-{formatPrice(totals.discount)}</strong>
-              </div>
               <div className="grand-total">
                 <span>Общо</span>
                 <strong>{formatPrice(totals.total)}</strong>
