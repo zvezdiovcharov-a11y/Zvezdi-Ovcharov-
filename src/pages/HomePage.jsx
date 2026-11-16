@@ -47,10 +47,6 @@ export default function HomePage() {
               <Sprout size={22} />
               <span>Вкоренени растения и контейнери</span>
             </div>
-            <div>
-              <ShieldCheck size={22} />
-              <span>10% отстъпка над 100 EUR</span>
-            </div>
           </div>
         </div>
       </section>
