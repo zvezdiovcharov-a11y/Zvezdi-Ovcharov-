@@ -178,8 +178,6 @@ export default function CheckoutPage() {
           </label>
 
           <input type="hidden" name="Покупки от кошницата" value={orderText(cart)} />
-          <input type="hidden" name="Междинна сума" value={formatPrice(totals.subtotal)} />
-          <input type="hidden" name="Отстъпка" value={formatPrice(totals.discount)} />
           <input type="hidden" name="Обща сума" value={formatPrice(totals.total)} />
 
           {status === "error" && (
