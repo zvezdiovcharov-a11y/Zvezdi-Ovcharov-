@@ -109,14 +109,6 @@ export default function CheckoutPage() {
             ))}
           </div>
           <div className="totals">
-            <div>
-              <span>Междинна сума</span>
-              <strong>{formatPrice(totals.subtotal)}</strong>
-            </div>
-            <div>
-              <span>Отстъпка над 100 EUR</span>
-              <strong>-{formatPrice(totals.discount)}</strong>
-            </div>
             <div className="grand-total">
               <span>Общо</span>
               <strong>{formatPrice(totals.total)}</strong>
@@ -168,7 +160,7 @@ export default function CheckoutPage() {
           </label>
           <label>
             Куриерска фирма
-            <CustomSelect name="Куриерска фирма" options={["Еконт", "Спиди"]} value={courier} onChange={setCourier} />
+            <CustomSelect name="Куриерска фирма" options={["Еконт", "Спиди", "Pigeon-Гълъб",]} value={courier} onChange={setCourier} />
           </label>
           <label>
             Адрес за доставка
